@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         primarySwatch: Colors.grey,
+        secondaryHeaderColor: Colors.grey,
       ),
       home: const MyHomePage(title: 'Home'),
     );
@@ -49,17 +50,23 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-            icon: Image.asset(
-              './assets/github-mark-white.png',
-            ),
-            onPressed: () {
-              _launchURLBrowser();
-            }),
-        centerTitle: true,
-        title: Text("Chiriac Serban Mihail"),
-      ),
-    );
+        appBar: AppBar(
+          leading: IconButton(
+              icon: Image.asset(
+                './assets/github-mark-white.png',
+                fit: BoxFit.cover,
+              ),
+              onPressed: () {
+                _launchURLBrowser();
+              }),
+          centerTitle: true,
+          title: Text("Chiriac Serban-Mihail"),
+        ),
+        body: Center(
+          child: Container(
+            alignment: FractionalOffset(0.2, 0.6),
+            child: Text('Educatie'),
+          ),
+        ));
   }
 }
