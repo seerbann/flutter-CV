@@ -2,7 +2,6 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -31,7 +30,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 _launchURLBrowser() async {
-  var url = Uri.parse("https://www.geeksforgeeks.org/");
+  var url = Uri.parse("https://github.com/seerbann");
   if (await canLaunchUrl(url)) {
     await launchUrl(url);
   } else {
@@ -52,18 +51,15 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: const Icon(Icons.favorite),
-          onPressed:() {
-                   _launchURLBrowser();
-          }
-         ),
+            icon: Image.asset(
+              './assets/github-mark-white.png',
+            ),
+            onPressed: () {
+              _launchURLBrowser();
+            }),
         centerTitle: true,
         title: Text("Chiriac Serban Mihail"),
       ),
-      
     );
   }
 }
-
-
-
