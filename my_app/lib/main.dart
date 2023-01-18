@@ -12,11 +12,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'CV-Chiriac Serban',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.grey,
       ),
-      home: const MyHomePage(title: 'Chiriac Serban-Mihail - CV'),
+      home: const MyHomePage(title: 'Home'),
     );
   }
 }
@@ -56,9 +57,8 @@ class _MyHomePageState extends State<MyHomePage> {
                    _launchURLBrowser();
           }
          ),
-        title: Container(
-          
-        ),
+        centerTitle: true,
+        title: Text("Chiriac Serban Mihail"),
       ),
       
     );
