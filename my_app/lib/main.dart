@@ -40,7 +40,9 @@ _launchURLBrowser() async {
 }
 
 var description = Container(
-  child: Text('descrierea mea'),
+  child: Text(
+    "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+  ),
 );
 
 class _MyHomePageState extends State<MyHomePage> {
@@ -68,20 +70,54 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Container(
         child: Padding(
-          padding: const EdgeInsets.all(20.0),
+          padding: const EdgeInsets.all(25.0),
           child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Column(
-                  children: [description, Text('DATA')],
+                Expanded(
+                  child: Column(
+                    children: [
+                      const Text(
+                        'Description',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 40,
+                          color: Colors.grey,
+                        ),
+                      ),
+                      description
+                    ],
+                  ),
                 ),
                 SizedBox(
-                  width: 550,
+                  width: 350,
                 ),
-                Column(
-                  children: [Text('otger column'), Text('otger column')],
-                )
+                Expanded(
+                    child: Column(
+                  children: [
+                    Container(
+                      //color: Color.fromRGBO(226, 220, 220, 1),
+                      child: const Text(
+                        'Projects',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 40,
+                          color: Colors.grey,
+                        ),
+                      ),
+                    ),
+                    Text('\u2022 Bullet Text'),
+                    SizedBox(height: 10),
+                    Text('\u2022 Bullet Text'),
+                    SizedBox(height: 10),
+                    Text('\u2022 Bullet Text'),
+                    SizedBox(height: 10),
+                    Text('\u2022 Bullet Text'),
+                    SizedBox(height: 10),
+                    Text('\u2022 Bullet Text'),
+                  ],
+                )),
               ]),
         ),
       ),
