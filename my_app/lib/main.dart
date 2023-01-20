@@ -86,6 +86,9 @@ class _MyHomePageState extends State<MyHomePage> {
                           color: Colors.grey,
                         ),
                       ),
+                      SizedBox(
+                        height: 20,
+                      ),
                       description
                     ],
                   ),
@@ -106,6 +109,9 @@ class _MyHomePageState extends State<MyHomePage> {
                           color: Colors.grey,
                         ),
                       ),
+                    ),
+                    SizedBox(
+                      height: 20,
                     ),
                     Text('\u2022 Bullet Text'),
                     SizedBox(height: 10),
