@@ -116,12 +116,18 @@ class _MyHomePageState extends State<MyHomePage> {
                   flex: 4,
                   child: Column(
                     children: [
-                      const Text(
-                        'Description',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 40,
-                          color: Colors.grey,
+                      Container(
+                        margin: const EdgeInsets.all(5.0),
+                        padding: const EdgeInsets.all(15.0),
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Colors.grey, width: 2)),
+                        child: const Text(
+                          'Description',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 40,
+                            color: Colors.grey,
+                          ),
                         ),
                       ),
                       SizedBox(
@@ -135,12 +141,18 @@ class _MyHomePageState extends State<MyHomePage> {
                       SizedBox(
                         height: 100,
                       ),
-                      Text(
-                        "Education",
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 40,
-                          color: Colors.grey,
+                      Container(
+                        margin: const EdgeInsets.all(5.0),
+                        padding: const EdgeInsets.all(15.0),
+                        decoration: BoxDecoration(
+                            border: Border.all(color: Colors.grey, width: 2)),
+                        child: Text(
+                          "Education",
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 40,
+                            color: Colors.grey,
+                          ),
                         ),
                       ),
                       education,
@@ -155,7 +167,10 @@ class _MyHomePageState extends State<MyHomePage> {
                     child: Column(
                       children: [
                         Container(
-                          //color: Color.fromRGBO(226, 220, 220, 1),
+                          margin: const EdgeInsets.all(5.0),
+                          padding: const EdgeInsets.all(15.0),
+                          decoration: BoxDecoration(
+                              border: Border.all(color: Colors.grey, width: 2)),
                           child: const Text(
                             'Projects',
                             style: TextStyle(
@@ -182,12 +197,18 @@ class _MyHomePageState extends State<MyHomePage> {
                         SizedBox(
                           height: 100,
                         ),
-                        Text(
-                          'Skills',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            fontSize: 40,
-                            color: Colors.grey,
+                        Container(
+                          margin: const EdgeInsets.all(5.0),
+                          padding: const EdgeInsets.all(15.0),
+                          decoration: BoxDecoration(
+                              border: Border.all(color: Colors.grey, width: 2)),
+                          child: Text(
+                            'Skills',
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 40,
+                              color: Colors.grey,
+                            ),
                           ),
                         )
                       ],
