@@ -57,7 +57,27 @@ var education = Column(
     SizedBox(
       height: 10,
     ),
-    Text("\u2022 Faculty of Computer Science - Iasi")
+    Text("\u2022 Faculty of Computer Science - Iasi"),
+    SizedBox(
+      height: 5,
+    ),
+    Text(
+      "Relavant Coursework",
+      style: TextStyle(fontWeight: FontWeight.bold),
+    ),
+    Text("-Data Structures"),
+  ],
+);
+
+var proj = Column(
+  children: [
+    new InkWell(
+        child: new Text(
+          '\u2022 Analogic and Digital Clock',
+          style: TextStyle(color: Colors.blue),
+        ),
+        onTap: () => launch(
+            'https://github.com/seerbann/Analogic-and-Digital-Clock_Faculty-Project'))
   ],
 );
 
@@ -148,16 +168,28 @@ class _MyHomePageState extends State<MyHomePage> {
                         SizedBox(
                           height: 20,
                         ),
+                        proj,
                         Text(
-                            "\u2022 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived"),
-                        SizedBox(height: 10),
+                            " Simple clock program written in C++ with a simple graphic library (Borland Graphics Interface)."),
+                        SizedBox(height: 20),
                         Text('\u2022 Bullet Text'),
                         SizedBox(height: 10),
+                        Text('Desc'),
+                        SizedBox(height: 20),
                         Text('\u2022 Bullet Text'),
                         SizedBox(height: 10),
-                        Text('\u2022 Bullet Text'),
-                        SizedBox(height: 10),
-                        Text('\u2022 Bullet Text'),
+                        Text('Desc'),
+                        SizedBox(
+                          height: 100,
+                        ),
+                        Text(
+                          'Skills',
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 40,
+                            color: Colors.grey,
+                          ),
+                        )
                       ],
                     )),
               ]),
