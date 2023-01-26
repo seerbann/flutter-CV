@@ -175,6 +175,27 @@ class aplicatia extends StatelessWidget {
                                 style: TextStyle(
                                     fontFamily: 'Roboto', fontSize: 20),
                               )),
+                          SizedBox(
+                            height: 300,
+                          ),
+                          Container(
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  "./assets/GitHub_Logo_White.png",
+                                  width: 70,
+                                  height: 40,
+                                ),
+                                Image.asset(
+                                  "./assets/Linkedin.png",
+                                  width: 45,
+                                  height: 45,
+                                ),
+                              ],
+                            ),
+                          )
                         ],
                       ),
                     ),
