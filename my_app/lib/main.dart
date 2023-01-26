@@ -175,44 +175,53 @@ class aplicatia extends StatelessWidget {
                                 style: TextStyle(
                                     fontFamily: 'Roboto', fontSize: 20),
                               )),
-                          SizedBox(
-                            height: 300,
-                          ),
-                          Container(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Expanded(
-                                    child: Image.asset(
-                                  "./assets/github-mark-white.png",
-                                  width: 34,
-                                  height: 34,
-                                )),
-                                Expanded(
-                                  child: Image.asset(
-                                    "./assets/Linkedin.png",
-                                    width: 40,
-                                    height: 40,
+                          Expanded(
+                            child: Container(
+                              child: Column(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Container(
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
+                                      children: [
+                                        Expanded(
+                                            child: Image.asset(
+                                          "./assets/github-mark-white.png",
+                                          width: 34,
+                                          height: 34,
+                                        )),
+                                        Expanded(
+                                          child: Image.asset(
+                                            "./assets/Linkedin.png",
+                                            width: 40,
+                                            height: 40,
+                                          ),
+                                        ),
+                                        Expanded(
+                                          child: Image.asset(
+                                            "./assets/Instagram_icon.png",
+                                            width: 35,
+                                            height: 35,
+                                          ),
+                                        ),
+                                      ],
+                                    ),
                                   ),
-                                ),
-                                Expanded(
-                                  child: Image.asset(
-                                    "./assets/Instagram_icon.png",
-                                    width: 35,
-                                    height: 35,
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ),
-                          Container(
-                            decoration: BoxDecoration(
-                                border: Border(top: BorderSide(width: 20))),
-                            child: SelectableText(
-                              "serbanm.chiriac@gmail.com",
-                              style: TextStyle(
-                                  color: Colors.white.withOpacity(0.6)),
+                                  Container(
+                                    decoration: BoxDecoration(
+                                        border:
+                                            Border(top: BorderSide(width: 20))),
+                                    child: SelectableText(
+                                      "serbanm.chiriac@gmail.com",
+                                      style: TextStyle(
+                                          color: Colors.white.withOpacity(0.6)),
+                                    ),
+                                  )
+                                ],
+                              ),
                             ),
                           )
                         ],
