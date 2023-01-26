@@ -1,3 +1,4 @@
+import 'dart:html';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -237,11 +238,34 @@ class aplicatia extends StatelessWidget {
                     child: Container(
                       color: Colors.black,
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
+                        //mainAxisAlignment: MainAxisAlignment.start,
+                        //crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
-                          Text('Right', textAlign: TextAlign.center),
-                          Text('Right', textAlign: TextAlign.center),
-                          Text('Right', textAlign: TextAlign.center),
+                          Container(
+                            decoration: BoxDecoration(
+                                border: Border(
+                                    top: BorderSide(width: 300),
+                                    right: BorderSide(width: 250))),
+                            child: Text(
+                              'Hello,',
+                              style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 75,
+                                  fontWeight: FontWeight.w500),
+                            ),
+                          ),
+                          Container(
+                            width: 850,
+                            height: 200,
+                            child: Text(
+                              'I am a highly motivated computer science student based in Iasi , Romania with a strong interest in sports and a strong and dedicated team player. Working well in a team environment, as well as excellent communication and interpersonal skills.',
+                              textAlign: TextAlign.justify,
+                              style: TextStyle(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 25,
+                                  color: Colors.white.withOpacity(0.8)),
+                            ),
+                          ),
                         ],
                       ),
                     ),
