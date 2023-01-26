@@ -184,16 +184,30 @@ class aplicatia extends StatelessWidget {
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Image.asset(
-                                  "./assets/GitHub_Logo_White.png",
-                                  width: 70,
-                                  height: 40,
+                                  "./assets/github-mark-white.png",
+                                  width: 34,
+                                  height: 34,
                                 ),
                                 Image.asset(
                                   "./assets/Linkedin.png",
-                                  width: 45,
-                                  height: 45,
+                                  width: 40,
+                                  height: 40,
+                                ),
+                                Image.asset(
+                                  "./assets/Instagram_icon.png",
+                                  width: 35,
+                                  height: 35,
                                 ),
                               ],
+                            ),
+                          ),
+                          Container(
+                            decoration: BoxDecoration(
+                                border: Border(top: BorderSide(width: 20))),
+                            child: Text(
+                              "serbanm.chiriac@gmail.com",
+                              style: TextStyle(
+                                  color: Colors.white.withOpacity(0.6)),
                             ),
                           )
                         ],
