@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
       title: 'CV-Chiriac Serban',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(primarySwatch: Colors.grey),
-      home: const MyHomePage(title: 'Home'),
+      home: const aplicatia(),
     );
   }
 }
@@ -81,8 +81,66 @@ var proj = Column(
   ],
 );
 
+class aplicatia extends StatelessWidget {
+  const aplicatia({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.black,
+      body: SafeArea(
+        child: Column(
+          // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          // crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Expanded(
+              flex: 1,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: <Widget>[
+                  Expanded(
+                    child: Container(
+                      decoration: BoxDecoration(
+                          border:
+                              Border(right: BorderSide(color: Colors.white))),
+                      width: 200,
+                      // color: Colors.red,
+                      child: Column(
+                        // mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Text('Left', textAlign: TextAlign.center),
+                          Text('Left', textAlign: TextAlign.center),
+                          Text('Left', textAlign: TextAlign.center),
+                        ],
+                      ),
+                    ),
+                  ),
+                  Expanded(
+                    flex: 5,
+                    child: Container(
+                      color: Colors.black,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: <Widget>[
+                          Text('Right', textAlign: TextAlign.center),
+                          Text('Right', textAlign: TextAlign.center),
+                          Text('Right', textAlign: TextAlign.center),
+                        ],
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
   void _incrementCounter() {
     setState(() {});
   }
