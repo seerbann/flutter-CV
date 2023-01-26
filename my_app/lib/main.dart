@@ -13,7 +13,15 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'CV-Chiriac Serban',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.grey),
+      theme: ThemeData(
+        textTheme: TextTheme(
+          bodyText1: TextStyle(),
+          bodyText2: TextStyle(),
+        ).apply(
+          bodyColor: Color.fromRGBO(255, 255, 255, 1),
+          displayColor: Colors.blue,
+        ),
+      ),
       home: const aplicatia(),
     );
   }
@@ -107,11 +115,66 @@ class aplicatia extends StatelessWidget {
                       width: 200,
                       // color: Colors.red,
                       child: Column(
-                        // mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: <Widget>[
-                          Text('Left', textAlign: TextAlign.center),
-                          Text('Left', textAlign: TextAlign.center),
-                          Text('Left', textAlign: TextAlign.center),
+                          Container(
+                            decoration: BoxDecoration(
+                                border: Border(
+                                    top: BorderSide(width: 50),
+                                    bottom: BorderSide(width: 5))),
+                            child: Image.asset(
+                              "./assets/pozaCV.png",
+                              height: 200,
+                              width: 200,
+                            ),
+                          ),
+                          Text(
+                            'Chiriac Serban Mihail',
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontFamily: 'Outfit',
+                                fontSize: 30,
+                                fontWeight: FontWeight.bold),
+                          ),
+                          SizedBox(
+                            height: 150,
+                          ),
+                          Container(
+                              decoration: BoxDecoration(
+                                  border: Border(
+                                      left: BorderSide(width: 20),
+                                      bottom: BorderSide(width: 15))),
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                'home',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    fontFamily: 'Roboto', fontSize: 20),
+                              )),
+                          Container(
+                              decoration: BoxDecoration(
+                                  border: Border(
+                                      left: BorderSide(width: 20),
+                                      bottom: BorderSide(width: 15))),
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                'curriculum vitae',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    fontFamily: 'Roboto', fontSize: 20),
+                              )),
+                          Container(
+                              decoration: BoxDecoration(
+                                  border: Border(
+                                      left: BorderSide(width: 20),
+                                      bottom: BorderSide(width: 15))),
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                'contact',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                    fontFamily: 'Roboto', fontSize: 20),
+                              )),
                         ],
                       ),
                     ),
