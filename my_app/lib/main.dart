@@ -183,20 +183,25 @@ class aplicatia extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
-                                Image.asset(
+                                Expanded(
+                                    child: Image.asset(
                                   "./assets/github-mark-white.png",
                                   width: 34,
                                   height: 34,
+                                )),
+                                Expanded(
+                                  child: Image.asset(
+                                    "./assets/Linkedin.png",
+                                    width: 40,
+                                    height: 40,
+                                  ),
                                 ),
-                                Image.asset(
-                                  "./assets/Linkedin.png",
-                                  width: 40,
-                                  height: 40,
-                                ),
-                                Image.asset(
-                                  "./assets/Instagram_icon.png",
-                                  width: 35,
-                                  height: 35,
+                                Expanded(
+                                  child: Image.asset(
+                                    "./assets/Instagram_icon.png",
+                                    width: 35,
+                                    height: 35,
+                                  ),
                                 ),
                               ],
                             ),
@@ -204,7 +209,7 @@ class aplicatia extends StatelessWidget {
                           Container(
                             decoration: BoxDecoration(
                                 border: Border(top: BorderSide(width: 20))),
-                            child: Text(
+                            child: SelectableText(
                               "serbanm.chiriac@gmail.com",
                               style: TextStyle(
                                   color: Colors.white.withOpacity(0.6)),
