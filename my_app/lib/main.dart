@@ -177,6 +177,10 @@ class aplicatia extends StatelessWidget {
                               )),
                           Expanded(
                             child: Container(
+                              decoration: BoxDecoration(
+                                  border: Border(
+                                bottom: BorderSide(width: 20),
+                              )),
                               child: Column(
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
