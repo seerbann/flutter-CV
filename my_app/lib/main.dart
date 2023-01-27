@@ -256,35 +256,47 @@ class aplicatia extends StatelessWidget {
                             ),
                           ),
                           Container(
-                            width: 850,
-                            height: 150,
-                            child: Text(
-                              'I am a highly motivated computer science student based in Iasi , Romania with a strong interest in sports and a strong and dedicated team player. Working well in a team environment, as well as excellent communication and interpersonal skills.',
-                              textAlign: TextAlign.justify,
-                              style: TextStyle(
-                                  height: 1.2,
-                                  fontFamily: 'Outfit',
-                                  fontSize: 25,
-                                  color: Colors.white.withOpacity(0.8)),
-                            ),
-                          ),
-                          TextButton(
-                              style: ButtonStyle(
-                                backgroundColor:
-                                    MaterialStatePropertyAll<Color>(
-                                        Colors.purple),
-                                foregroundColor:
-                                    MaterialStateProperty.all<Color>(
-                                        Colors.white),
+                              decoration: BoxDecoration(
+                                border: Border(
+                                  right: BorderSide(width: 250),
+                                ),
                               ),
-                              onPressed: (() {
-                                _launchURLBrowser();
-                              }),
-                              child: Text(
-                                "See my CV",
-                                style: TextStyle(
-                                    fontFamily: 'Outfit', fontSize: 25),
-                              ))
+                              // width: 850,
+                              // height: 150,
+                              child: Flexible(
+                                child: Text(
+                                  'I am a highly motivated computer science student based in Iasi , Romania with a strong interest in sports and a strong, dedicated team player. Working well in a team environment, as well as excellent communication and interpersonal skills.',
+                                  textAlign: TextAlign.justify,
+                                  style: TextStyle(
+                                      height: 1.3,
+                                      fontFamily: 'Outfit',
+                                      fontSize: 25,
+                                      color: Colors.white.withOpacity(0.8)),
+                                ),
+                              )),
+                          Container(
+                            decoration: BoxDecoration(
+                                border: Border(
+                                    left: BorderSide(width: 20),
+                                    top: BorderSide(width: 20))),
+                            child: TextButton(
+                                style: ButtonStyle(
+                                  backgroundColor:
+                                      MaterialStatePropertyAll<Color>(
+                                          Colors.purple),
+                                  foregroundColor:
+                                      MaterialStateProperty.all<Color>(
+                                          Colors.white),
+                                ),
+                                onPressed: (() {
+                                  _launchURLBrowser();
+                                }),
+                                child: Text(
+                                  "See my CV",
+                                  style: TextStyle(
+                                      fontFamily: 'Outfit', fontSize: 25),
+                                )),
+                          )
                         ],
                       ),
                     ),
