@@ -261,11 +261,29 @@ class aplicatia extends StatelessWidget {
                               'I am a highly motivated computer science student based in Iasi , Romania with a strong interest in sports and a strong and dedicated team player. Working well in a team environment, as well as excellent communication and interpersonal skills.',
                               textAlign: TextAlign.justify,
                               style: TextStyle(
+                                  height: 1.2,
                                   fontFamily: 'Outfit',
                                   fontSize: 25,
                                   color: Colors.white.withOpacity(0.8)),
                             ),
                           ),
+                          TextButton(
+                              style: ButtonStyle(
+                                backgroundColor:
+                                    MaterialStatePropertyAll<Color>(
+                                        Colors.purple),
+                                foregroundColor:
+                                    MaterialStateProperty.all<Color>(
+                                        Colors.white),
+                              ),
+                              onPressed: (() {
+                                _launchURLBrowser();
+                              }),
+                              child: Text(
+                                "See my CV",
+                                style: TextStyle(
+                                    fontFamily: 'Outfit', fontSize: 25),
+                              ))
                         ],
                       ),
                     ),
