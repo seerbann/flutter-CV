@@ -2,6 +2,7 @@ import 'dart:html';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'OnHover.dart';
 
 void main() {
   runApp(const MyApp());
@@ -90,9 +91,14 @@ var proj = Column(
   ],
 );
 
-class aplicatia extends StatelessWidget {
+class aplicatia extends StatefulWidget {
   const aplicatia({super.key});
 
+  @override
+  State<aplicatia> createState() => _aplicatiaState();
+}
+
+class _aplicatiaState extends State<aplicatia> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -146,11 +152,16 @@ class aplicatia extends StatelessWidget {
                                       left: BorderSide(width: 20),
                                       bottom: BorderSide(width: 15))),
                               alignment: Alignment.centerLeft,
-                              child: Text(
-                                'home',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    fontFamily: 'Roboto', fontSize: 20),
+                              child: InkWell(
+                                child: Text(
+                                  'home',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      fontFamily: 'Roboto', fontSize: 20),
+                                ),
+                                onTap: () {
+                                  _launchURLBrowser();
+                                },
                               )),
                           Container(
                               decoration: BoxDecoration(
@@ -158,11 +169,16 @@ class aplicatia extends StatelessWidget {
                                       left: BorderSide(width: 20),
                                       bottom: BorderSide(width: 15))),
                               alignment: Alignment.centerLeft,
-                              child: Text(
-                                'curriculum vitae',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    fontFamily: 'Roboto', fontSize: 20),
+                              child: InkWell(
+                                child: Text(
+                                  'curriculum vitae',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                      fontFamily: 'Roboto', fontSize: 20),
+                                ),
+                                onTap: () {
+                                  _launchURLBrowser();
+                                },
                               )),
                           Container(
                               decoration: BoxDecoration(
