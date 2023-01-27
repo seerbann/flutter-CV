@@ -236,16 +236,17 @@ class aplicatia extends StatelessWidget {
                   Expanded(
                     flex: 5,
                     child: Container(
-                      color: Colors.black,
+                      alignment: Alignment.centerLeft,
+                      decoration: BoxDecoration(
+                          color: Colors.black,
+                          border: Border(
+                              left: BorderSide(width: 200),
+                              top: BorderSide(width: 300))),
                       child: Column(
                         //mainAxisAlignment: MainAxisAlignment.start,
-                        //crossAxisAlignment: CrossAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: <Widget>[
                           Container(
-                            decoration: BoxDecoration(
-                                border: Border(
-                                    top: BorderSide(width: 300),
-                                    right: BorderSide(width: 250))),
                             child: Text(
                               'Hello,',
                               style: TextStyle(
@@ -256,7 +257,7 @@ class aplicatia extends StatelessWidget {
                           ),
                           Container(
                             width: 850,
-                            height: 200,
+                            height: 150,
                             child: Text(
                               'I am a highly motivated computer science student based in Iasi , Romania with a strong interest in sports and a strong and dedicated team player. Working well in a team environment, as well as excellent communication and interpersonal skills.',
                               textAlign: TextAlign.justify,
