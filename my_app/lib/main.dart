@@ -3,6 +3,7 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'OnHover.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
 
 void main() {
   runApp(const MyApp());
@@ -135,63 +136,103 @@ class _aplicatiaState extends State<aplicatia> {
                               width: 200,
                             ),
                           ),
-                          Text(
-                            'Chiriac Serban Mihail',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontFamily: 'Outfit',
-                                fontSize: 30,
-                                fontWeight: FontWeight.bold),
+                          Container(
+                            decoration: BoxDecoration(
+                                border: Border(
+                                    top: BorderSide(width: 25),
+                                    left: BorderSide(width: 20))),
+                            child: AnimatedTextKit(
+                              animatedTexts: [
+                                TypewriterAnimatedText(
+                                  'Chiriac Serban Mihail',
+                                  textStyle: const TextStyle(
+                                      fontSize: 30.0,
+                                      fontWeight: FontWeight.bold,
+                                      fontFamily: 'Outfit'),
+                                  speed: const Duration(milliseconds: 250),
+                                ),
+                              ],
+                              isRepeatingAnimation: false,
+                            ),
                           ),
                           SizedBox(
                             height: 150,
                           ),
                           Container(
-                              decoration: BoxDecoration(
-                                  border: Border(
-                                      left: BorderSide(width: 20),
-                                      bottom: BorderSide(width: 15))),
-                              alignment: Alignment.centerLeft,
-                              child: InkWell(
-                                child: Text(
-                                  'home',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      fontFamily: 'Roboto', fontSize: 20),
-                                ),
-                                onTap: () {
-                                  _launchURLBrowser();
-                                },
-                              )),
+                            decoration: BoxDecoration(
+                                border: Border(
+                                    left: BorderSide(width: 20),
+                                    bottom: BorderSide(width: 15))),
+                            alignment: Alignment.centerLeft,
+                            child: OnHover(
+                              builder: (isHovered) {
+                                final _color =
+                                    isHovered ? Colors.purple : Colors.white;
+                                return InkWell(
+                                  child: Text(
+                                    'home',
+                                    style: TextStyle(
+                                        color: _color,
+                                        fontFamily: 'Roboto',
+                                        fontSize: 20),
+                                  ),
+                                  onTap: () {
+                                    _launchURLBrowser();
+                                  },
+                                );
+                              },
+                            ),
+                          ),
                           Container(
-                              decoration: BoxDecoration(
-                                  border: Border(
-                                      left: BorderSide(width: 20),
-                                      bottom: BorderSide(width: 15))),
-                              alignment: Alignment.centerLeft,
-                              child: InkWell(
-                                child: Text(
-                                  'curriculum vitae',
-                                  textAlign: TextAlign.center,
-                                  style: TextStyle(
-                                      fontFamily: 'Roboto', fontSize: 20),
-                                ),
-                                onTap: () {
-                                  _launchURLBrowser();
-                                },
-                              )),
+                            decoration: BoxDecoration(
+                                border: Border(
+                                    left: BorderSide(width: 20),
+                                    bottom: BorderSide(width: 15))),
+                            alignment: Alignment.centerLeft,
+                            child: OnHover(
+                              builder: (isHovered) {
+                                final _color =
+                                    isHovered ? Colors.purple : Colors.white;
+                                return InkWell(
+                                  child: Text(
+                                    'curriculum vitae',
+                                    style: TextStyle(
+                                        color: _color,
+                                        fontFamily: 'Roboto',
+                                        fontSize: 20),
+                                  ),
+                                  onTap: () {
+                                    _launchURLBrowser();
+                                  },
+                                );
+                              },
+                            ),
+                          ),
                           Container(
-                              decoration: BoxDecoration(
-                                  border: Border(
-                                      left: BorderSide(width: 20),
-                                      bottom: BorderSide(width: 15))),
-                              alignment: Alignment.centerLeft,
-                              child: Text(
-                                'contact',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(
-                                    fontFamily: 'Roboto', fontSize: 20),
-                              )),
+                            decoration: BoxDecoration(
+                                border: Border(
+                                    left: BorderSide(width: 20),
+                                    bottom: BorderSide(width: 15))),
+                            alignment: Alignment.centerLeft,
+                            child: OnHover(
+                              builder: (isHovered) {
+                                final _color =
+                                    isHovered ? Colors.purple : Colors.white;
+                                return InkWell(
+                                  child: Text(
+                                    'contact',
+                                    style: TextStyle(
+                                        color: _color,
+                                        fontFamily: 'Roboto',
+                                        fontSize: 20),
+                                  ),
+                                  onTap: () {
+                                    _launchURLBrowser();
+                                  },
+                                );
+                              },
+                            ),
+                          ),
                           Expanded(
                             child: Container(
                               decoration: BoxDecoration(
