@@ -651,7 +651,7 @@ class _aplicatiaState extends State<aplicatia> {
                                           left: BorderSide(
                                               color: Colors.white
                                                   .withOpacity(0.5)))),
-                                  height: 800,
+                                  //height: 800,
                                   child: Expanded(
                                     child: Column(
                                       crossAxisAlignment:
@@ -714,7 +714,58 @@ class _aplicatiaState extends State<aplicatia> {
                             ],
                           ),
                           SizedBox(
-                            height: 500,
+                            height: 200,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Row(
+                                children: [
+                                  Text('contact me',
+                                      style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 20,
+                                          color: Colors.white)),
+                                  SizedBox(
+                                    width: 20,
+                                  ),
+                                  InkWell(
+                                    child: Image.asset(
+                                      "./assets/Linkedin.png",
+                                      width: 40,
+                                      height: 40,
+                                    ),
+                                    onTap: () {
+                                      _launchURLBrowser_linkedin();
+                                    },
+                                  ),
+                                  SizedBox(
+                                    width: 10,
+                                  ),
+                                  InkWell(
+                                    child: Image.asset(
+                                      "./assets/Instagram_icon.png",
+                                      width: 35,
+                                      height: 35,
+                                    ),
+                                    onTap: () {
+                                      _launchURLBrowser_inst();
+                                    },
+                                  ),
+                                ],
+                              ),
+                              Container(
+                                child: Column(
+                                  children: [
+                                    Text('0755952408'),
+                                    SelectableText('serbanm.chiriac@gmail.com')
+                                  ],
+                                ),
+                              ),
+                              SizedBox(
+                                height: 200,
+                              )
+                            ],
                           )
                         ],
                       ),
