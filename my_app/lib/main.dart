@@ -486,6 +486,10 @@ class _aplicatiaState extends State<aplicatia> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Container(
+                                            decoration: BoxDecoration(
+                                                border: Border(
+                                                    left:
+                                                        BorderSide(width: 10))),
                                             child: Text(
                                               'Projects',
                                               style: TextStyle(
@@ -497,6 +501,7 @@ class _aplicatiaState extends State<aplicatia> {
                                           SizedBox(
                                             height: 20,
                                           ),
+                                          //1st proj
                                           Container(
                                             decoration: BoxDecoration(
                                                 border: Border(
@@ -545,34 +550,110 @@ class _aplicatiaState extends State<aplicatia> {
                                         ],
                                       ),
                                     ),
-                                    Container(
-                                      decoration: BoxDecoration(
-                                          border: Border(
-                                              left: BorderSide(width: 50))),
-                                      height: 500,
-                                      child: Text(
-                                        'Education',
-                                        style: TextStyle(
-                                            fontFamily: 'Outfit',
-                                            fontSize: 50,
-                                            fontWeight: FontWeight.w300),
-                                      ),
+                                    Divider(
+                                      color: Colors.white,
                                     ),
+                                    //education
+                                    Container(
+                                      height: 300,
+
+                                      //coloana education
+                                      child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Container(
+                                              decoration: BoxDecoration(
+                                                  border: Border(
+                                                      left: BorderSide(
+                                                          width: 50))),
+                                              child: Column(
+                                                children: [
+                                                  Text(
+                                                    'Education',
+                                                    style: TextStyle(
+                                                        fontFamily: 'Outfit',
+                                                        fontSize: 50,
+                                                        fontWeight:
+                                                            FontWeight.w300),
+                                                  ),
+                                                ],
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              height: 20,
+                                            ),
+                                            //1st proj
+                                            Container(
+                                              decoration: BoxDecoration(
+                                                  border: Border(
+                                                      left: BorderSide(
+                                                          width: 50))),
+                                              child: Text(
+                                                '\u2022 Faculty of Computer Science Iasi',
+                                                style: TextStyle(
+                                                    fontFamily: 'Outfit',
+                                                    fontSize: 25),
+                                              ),
+                                            ),
+                                            SizedBox(
+                                              height: 10,
+                                            ),
+                                            Container(
+                                              decoration: BoxDecoration(
+                                                  border: Border(
+                                                      left: BorderSide(
+                                                          width: 100))),
+                                              child: Text(
+                                                  '(October 2022-Present)'),
+                                            ),
+                                            SizedBox(
+                                              height: 15,
+                                            ),
+
+                                            Container(
+                                              decoration: BoxDecoration(
+                                                  border: Border(
+                                                      left: BorderSide(
+                                                          width: 70))),
+                                              child: Text(
+                                                'relavant coursework:',
+                                                style: TextStyle(
+                                                    fontFamily: 'Outfit',
+                                                    fontSize: 25,
+                                                    color: Colors.white
+                                                        .withOpacity(0.7)),
+                                              ),
+                                            ),
+                                            Container(
+                                              decoration: BoxDecoration(
+                                                  border: Border(
+                                                      left: BorderSide(
+                                                          width: 75))),
+                                              child: Text(
+                                                "data strucutres",
+                                                style: TextStyle(
+                                                    fontFamily: 'Outfit',
+                                                    fontSize: 25),
+                                              ),
+                                            )
+                                          ]),
+                                    )
                                   ],
                                 ),
                               ),
                               Expanded(
                                 flex: 3,
                                 child: Container(
-                                  height: 1000,
+                                  alignment: Alignment.topCenter,
                                   decoration: BoxDecoration(
                                       border: Border(
-                                          left:
-                                              BorderSide(color: Colors.white))),
+                                          left: BorderSide(
+                                              color: Colors.white
+                                                  .withOpacity(0.5)))),
+                                  height: 800,
                                   child: Expanded(
                                     child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.start,
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
                                       children: [
@@ -622,7 +703,7 @@ class _aplicatiaState extends State<aplicatia> {
                                                   .withOpacity(0.6)),
                                         ),
                                         SizedBox(
-                                          height: 20,
+                                          height: 15,
                                         ),
                                         _softSkills,
                                       ],
