@@ -312,7 +312,7 @@ class _aplicatiaState extends State<aplicatia> {
                                         fontSize: 20),
                                   ),
                                   onTap: () {
-                                    _launchURLBrowser();
+                                    _scrollToIndex(1);
                                   },
                                 );
                               },
@@ -713,6 +713,9 @@ class _aplicatiaState extends State<aplicatia> {
                               )
                             ],
                           ),
+                          SizedBox(
+                            height: 500,
+                          )
                         ],
                       ),
                     ),
