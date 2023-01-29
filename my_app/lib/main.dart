@@ -58,6 +58,16 @@ void _launchURLBrowser_inst() async {
   }
 }
 
+void _launchURLBrowser_clock() async {
+  var url = Uri.parse(
+      "https://github.com/seerbann/Analogic-and-Digital-Clock_Faculty-Project");
+  if (await canLaunchUrl(url)) {
+    await launchUrl(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+
 var _skills = Container(
   decoration: BoxDecoration(border: Border(left: BorderSide(width: 20))),
   child: Column(
@@ -450,97 +460,174 @@ class _aplicatiaState extends State<aplicatia> {
                               ],
                             ),
                           ),
+                          //sized box dintre pag1 si pag2
                           SizedBox(
                             width: 1000,
                             height: 500,
                           ),
                           Row(
+                            //rand project & skills
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Container(
-                                    height: 500,
-                                    child: Text(
-                                      'Projects',
-                                      style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 50,
-                                          fontWeight: FontWeight.w300),
-                                    ),
-                                  ),
-                                  Container(
-                                    height: 500,
-                                    child: Text(
-                                      'Education',
-                                      style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 50,
-                                          fontWeight: FontWeight.w300),
-                                    ),
-                                  )
-                                ],
-                              ),
-                              SizedBox(
-                                width: 150,
-                              ),
-                              Container(
-                                height: 1000,
-                                decoration: BoxDecoration(
-                                    border: Border(
-                                        left: BorderSide(color: Colors.white))),
+                              Expanded(
+                                flex: 5,
                                 child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  //coloara stanga (cv)
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text(
-                                      ' Skills',
-                                      style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 50,
-                                          fontWeight: FontWeight.w300),
+                                    Container(
+                                      height: 500,
+                                      decoration: BoxDecoration(
+                                          border: Border(
+                                              left: BorderSide(width: 50))),
+                                      child: Column(
+                                        //coloana proiecte
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Container(
+                                            child: Text(
+                                              'Projects',
+                                              style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 50,
+                                                  fontWeight: FontWeight.w300),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            height: 20,
+                                          ),
+                                          Container(
+                                            decoration: BoxDecoration(
+                                                border: Border(
+                                                    left:
+                                                        BorderSide(width: 50))),
+                                            child: Text(
+                                              '\u2022 Analogic and Digital Clock made with C++',
+                                              style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 25),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          Container(
+                                            decoration: BoxDecoration(
+                                                border: Border(
+                                                    left:
+                                                        BorderSide(width: 75))),
+                                            child: Text(
+                                                '  clock program written in C++ with a simple graphic library (Borland Graphics Interface).',
+                                                style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                )),
+                                          ),
+                                          SizedBox(
+                                            height: 10,
+                                          ),
+                                          Container(
+                                            alignment: Alignment.center,
+                                            width: 500,
+                                            child: InkWell(
+                                              child: Text(
+                                                  'click here for GitHub repository & a short documentation',
+                                                  style: TextStyle(
+                                                    color: Colors.white
+                                                        .withOpacity(0.7),
+                                                    fontFamily: 'Outfit',
+                                                  )),
+                                              onTap: () {
+                                                _launchURLBrowser_clock();
+                                              },
+                                            ),
+                                          ),
+                                        ],
+                                      ),
                                     ),
-                                    SizedBox(
-                                      height: 20,
+                                    Container(
+                                      decoration: BoxDecoration(
+                                          border: Border(
+                                              left: BorderSide(width: 50))),
+                                      height: 500,
+                                      child: Text(
+                                        'Education',
+                                        style: TextStyle(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 50,
+                                            fontWeight: FontWeight.w300),
+                                      ),
                                     ),
-                                    Text(
-                                      '  technical skills:',
-                                      style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 30,
-                                          color: Colors.white.withOpacity(0.6)),
-                                    ),
-                                    SizedBox(
-                                      height: 20,
-                                    ),
-                                    _skills,
-                                    Text(
-                                      '  language proeficiency:',
-                                      style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 30,
-                                          color: Colors.white.withOpacity(0.6)),
-                                    ),
-                                    SizedBox(
-                                      height: 20,
-                                    ),
-                                    _languages,
-                                    SizedBox(
-                                      height: 20,
-                                    ),
-                                    Text(
-                                      '  soft skills:',
-                                      style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 30,
-                                          color: Colors.white.withOpacity(0.6)),
-                                    ),
-                                    SizedBox(
-                                      height: 20,
-                                    ),
-                                    _softSkills,
                                   ],
+                                ),
+                              ),
+                              Expanded(
+                                flex: 3,
+                                child: Container(
+                                  height: 1000,
+                                  decoration: BoxDecoration(
+                                      border: Border(
+                                          left:
+                                              BorderSide(color: Colors.white))),
+                                  child: Expanded(
+                                    child: Column(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          ' Skills',
+                                          style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 50,
+                                              fontWeight: FontWeight.w300),
+                                        ),
+                                        SizedBox(
+                                          height: 20,
+                                        ),
+                                        Text(
+                                          '  technical skills:',
+                                          style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 30,
+                                              color: Colors.white
+                                                  .withOpacity(0.6)),
+                                        ),
+                                        SizedBox(
+                                          height: 20,
+                                        ),
+                                        _skills,
+                                        Text(
+                                          '  language proeficiency:',
+                                          style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 30,
+                                              color: Colors.white
+                                                  .withOpacity(0.6)),
+                                        ),
+                                        SizedBox(
+                                          height: 20,
+                                        ),
+                                        _languages,
+                                        SizedBox(
+                                          height: 20,
+                                        ),
+                                        Text(
+                                          '  soft skills:',
+                                          style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 30,
+                                              color: Colors.white
+                                                  .withOpacity(0.6)),
+                                        ),
+                                        SizedBox(
+                                          height: 20,
+                                        ),
+                                        _softSkills,
+                                      ],
+                                    ),
+                                  ),
                                 ),
                               )
                             ],
