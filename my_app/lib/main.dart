@@ -719,47 +719,59 @@ class _aplicatiaState extends State<aplicatia> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              Row(
-                                children: [
-                                  Text('contact me',
-                                      style: TextStyle(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 20,
-                                          color: Colors.white)),
-                                  SizedBox(
-                                    width: 20,
+                              Expanded(
+                                flex: 4,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                      border:
+                                          Border(left: BorderSide(width: 15))),
+                                  child: Row(
+                                    children: [
+                                      Text('contact me',
+                                          style: TextStyle(
+                                              fontFamily: 'Outfit',
+                                              fontSize: 20,
+                                              color: Colors.white)),
+                                      SizedBox(
+                                        width: 20,
+                                      ),
+                                      InkWell(
+                                        child: Image.asset(
+                                          "./assets/Linkedin.png",
+                                          width: 40,
+                                          height: 40,
+                                        ),
+                                        onTap: () {
+                                          _launchURLBrowser_linkedin();
+                                        },
+                                      ),
+                                      SizedBox(
+                                        width: 10,
+                                      ),
+                                      InkWell(
+                                        child: Image.asset(
+                                          "./assets/Instagram_icon.png",
+                                          width: 35,
+                                          height: 35,
+                                        ),
+                                        onTap: () {
+                                          _launchURLBrowser_inst();
+                                        },
+                                      ),
+                                    ],
                                   ),
-                                  InkWell(
-                                    child: Image.asset(
-                                      "./assets/Linkedin.png",
-                                      width: 40,
-                                      height: 40,
-                                    ),
-                                    onTap: () {
-                                      _launchURLBrowser_linkedin();
-                                    },
-                                  ),
-                                  SizedBox(
-                                    width: 10,
-                                  ),
-                                  InkWell(
-                                    child: Image.asset(
-                                      "./assets/Instagram_icon.png",
-                                      width: 35,
-                                      height: 35,
-                                    ),
-                                    onTap: () {
-                                      _launchURLBrowser_inst();
-                                    },
-                                  ),
-                                ],
+                                ),
                               ),
-                              Container(
-                                child: Column(
-                                  children: [
-                                    Text('0755952408'),
-                                    SelectableText('serbanm.chiriac@gmail.com')
-                                  ],
+                              Expanded(
+                                flex: 1,
+                                child: Container(
+                                  child: Column(
+                                    children: [
+                                      Text('0755952408'),
+                                      SelectableText(
+                                          'serbanm.chiriac@gmail.com')
+                                    ],
+                                  ),
                                 ),
                               ),
                               SizedBox(
