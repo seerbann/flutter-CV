@@ -46,6 +46,8 @@ class aplicatia extends StatefulWidget {
   State<aplicatia> createState() => _aplicatiaState();
 }
 
+PageController _controller = PageController();
+
 class _aplicatiaState extends State<aplicatia> {
   @override
   Widget build(BuildContext context) {
@@ -239,71 +241,85 @@ class _aplicatiaState extends State<aplicatia> {
                   ),
                   Expanded(
                     flex: 5,
-                    child: SingleChildScrollView(
-                      child: Container(
-                        alignment: Alignment.centerLeft,
-                        decoration: BoxDecoration(
-                            color: Colors.black,
-                            border: Border(
-                                left: BorderSide(width: 200),
-                                top: BorderSide(width: 300))),
-                        child: Column(
-                          //mainAxisAlignment: MainAxisAlignment.start,
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: <Widget>[
-                            Container(
-                              child: Text(
-                                'Hello,',
-                                style: TextStyle(
-                                    fontFamily: 'Outfit',
-                                    fontSize: 75,
-                                    fontWeight: FontWeight.w500),
-                              ),
-                            ),
-                            Container(
-                                decoration: BoxDecoration(
-                                  border: Border(
-                                    right: BorderSide(width: 250),
+                    child: RawScrollbar(
+                      controller: _controller,
+                      scrollbarOrientation: ScrollbarOrientation.right,
+                      thumbColor: Colors.purple.withOpacity(0.9),
+                      child: ListView(
+                        controller: _controller,
+                        children: [
+                          Container(
+                            alignment: Alignment.centerLeft,
+                            decoration: BoxDecoration(
+                                color: Colors.black,
+                                border: Border(
+                                    left: BorderSide(width: 200),
+                                    top: BorderSide(width: 300))),
+                            child: Column(
+                              //mainAxisAlignment: MainAxisAlignment.start,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: <Widget>[
+                                Container(
+                                  child: Text(
+                                    'Hello,',
+                                    style: TextStyle(
+                                        fontFamily: 'Outfit',
+                                        fontSize: 75,
+                                        fontWeight: FontWeight.w500),
                                   ),
                                 ),
-                                // width: 850,
-                                // height: 150,
-                                child: Flexible(
-                                  child: Text(
-                                    'I am a highly motivated computer science student based in Iasi , Romania with a strong interest in sports and a strong, dedicated team player. Working well in a team environment, as well as excellent communication and interpersonal skills.',
-                                    textAlign: TextAlign.justify,
-                                    style: TextStyle(
-                                        height: 1.3,
-                                        fontFamily: 'Outfit',
-                                        fontSize: 25,
-                                        color: Colors.white.withOpacity(0.8)),
-                                  ),
-                                )),
-                            Container(
-                              decoration: BoxDecoration(
-                                  border: Border(
-                                      left: BorderSide(width: 20),
-                                      top: BorderSide(width: 20))),
-                              child: TextButton(
-                                  style: ButtonStyle(
-                                    backgroundColor:
-                                        MaterialStatePropertyAll<Color>(
-                                            Colors.purple),
-                                    foregroundColor:
-                                        MaterialStateProperty.all<Color>(
-                                            Colors.white),
-                                  ),
-                                  onPressed: (() {
-                                    _launchURLBrowser();
-                                  }),
-                                  child: Text(
-                                    "See my CV",
-                                    style: TextStyle(
-                                        fontFamily: 'Outfit', fontSize: 25),
-                                  )),
-                            )
-                          ],
-                        ),
+                                Container(
+                                    decoration: BoxDecoration(
+                                      border: Border(
+                                        right: BorderSide(width: 250),
+                                      ),
+                                    ),
+                                    // width: 850,
+                                    // height: 150,
+                                    child: Flexible(
+                                      child: Text(
+                                        'I am a highly motivated computer science student based in Iasi , Romania with a strong interest in sports and a strong, dedicated team player. Working well in a team environment, as well as excellent communication and interpersonal skills.',
+                                        textAlign: TextAlign.justify,
+                                        style: TextStyle(
+                                            height: 1.3,
+                                            fontFamily: 'Outfit',
+                                            fontSize: 25,
+                                            color:
+                                                Colors.white.withOpacity(0.8)),
+                                      ),
+                                    )),
+                                Container(
+                                  decoration: BoxDecoration(
+                                      border: Border(
+                                          left: BorderSide(width: 20),
+                                          top: BorderSide(width: 20))),
+                                  child: TextButton(
+                                      style: ButtonStyle(
+                                        backgroundColor:
+                                            MaterialStatePropertyAll<Color>(
+                                                Colors.purple),
+                                        foregroundColor:
+                                            MaterialStateProperty.all<Color>(
+                                                Colors.white),
+                                      ),
+                                      onPressed: (() {
+                                        _launchURLBrowser();
+                                      }),
+                                      child: Text(
+                                        "See my CV",
+                                        style: TextStyle(
+                                            fontFamily: 'Outfit', fontSize: 25),
+                                      )),
+                                ),
+                                Container(
+                                    decoration: BoxDecoration(
+                                        border: Border(
+                                            top: BorderSide(width: 1200))),
+                                    child: Text('data'))
+                              ],
+                            ),
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -315,4 +331,9 @@ class _aplicatiaState extends State<aplicatia> {
       ),
     );
   }
+}
+
+void _scrollToIndex(int index) {
+  _controller.animateToPage(index + 1,
+      duration: Duration(seconds: 2), curve: Curves.fastLinearToSlowEaseIn);
 }
