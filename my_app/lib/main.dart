@@ -126,7 +126,7 @@ class _aplicatiaState extends State<aplicatia> {
                                         fontSize: 20),
                                   ),
                                   onTap: () {
-                                    _launchURLBrowser();
+                                    _scrollToIndex(-1);
                                   },
                                 );
                               },
