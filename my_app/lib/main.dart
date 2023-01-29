@@ -39,6 +39,68 @@ _launchURLBrowser() async {
   }
 }
 
+var _skills = Container(
+  decoration: BoxDecoration(border: Border(left: BorderSide(width: 20))),
+  child: Column(
+    mainAxisAlignment: MainAxisAlignment.start,
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Text(
+        '\u2022 Flutter',
+        style: TextStyle(fontFamily: 'Outfit', fontSize: 25),
+      ),
+      SizedBox(
+        height: 5,
+      ),
+      Text('\u2022 Git', style: TextStyle(fontFamily: 'Outfit', fontSize: 25)),
+      SizedBox(
+        height: 5,
+      ),
+      Text('\u2022 Dart', style: TextStyle(fontFamily: 'Outfit', fontSize: 25)),
+      SizedBox(
+        height: 5,
+      ),
+      Text('\u2022 C/C++',
+          style: TextStyle(fontFamily: 'Outfit', fontSize: 25)),
+      SizedBox(
+        height: 5,
+      ),
+      Text('\u2022 HTML, CSS',
+          style: TextStyle(fontFamily: 'Outfit', fontSize: 25)),
+      SizedBox(
+        height: 5,
+      ),
+      Text('\u2022 JavaScript',
+          style: TextStyle(fontFamily: 'Outfit', fontSize: 25)),
+      SizedBox(
+        height: 5,
+      ),
+      Text('\u2022 Figma',
+          style: TextStyle(fontFamily: 'Outfit', fontSize: 25)),
+      SizedBox(
+        height: 20,
+      ),
+    ],
+  ),
+);
+
+var _languages = Container(
+  decoration: BoxDecoration(border: Border(left: BorderSide(width: 20))),
+  child: Column(
+    mainAxisAlignment: MainAxisAlignment.start,
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Text('\u2022 english - understanding & talking freely (B2 level)',
+          style: TextStyle(fontFamily: 'Outfit', fontSize: 25)),
+      SizedBox(
+        height: 5,
+      ),
+      Text('\u2022 romanian - native level',
+          style: TextStyle(fontFamily: 'Outfit', fontSize: 25))
+    ],
+  ),
+);
+
 class aplicatia extends StatefulWidget {
   const aplicatia({super.key});
 
@@ -151,7 +213,7 @@ class _aplicatiaState extends State<aplicatia> {
                                         fontSize: 20),
                                   ),
                                   onTap: () {
-                                    _scrollToIndex(1);
+                                    _scrollToIndex(0);
                                   },
                                 );
                               },
@@ -303,7 +365,7 @@ class _aplicatiaState extends State<aplicatia> {
                                                 Colors.white),
                                       ),
                                       onPressed: (() {
-                                        _launchURLBrowser();
+                                        _scrollToIndex(0);
                                       }),
                                       child: Text(
                                         "See my CV",
@@ -311,13 +373,99 @@ class _aplicatiaState extends State<aplicatia> {
                                             fontFamily: 'Outfit', fontSize: 25),
                                       )),
                                 ),
-                                Container(
-                                    decoration: BoxDecoration(
-                                        border: Border(
-                                            top: BorderSide(width: 1200))),
-                                    child: Text('data'))
                               ],
                             ),
+                          ),
+                          SizedBox(
+                            width: 1000,
+                            height: 500,
+                          ),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            children: [
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                children: [
+                                  Container(
+                                    height: 500,
+                                    child: Text(
+                                      'Projects',
+                                      style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 50,
+                                          fontWeight: FontWeight.w300),
+                                    ),
+                                  ),
+                                  Container(
+                                    height: 500,
+                                    child: Text(
+                                      'Education',
+                                      style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 50,
+                                          fontWeight: FontWeight.w300),
+                                    ),
+                                  )
+                                ],
+                              ),
+                              SizedBox(
+                                width: 150,
+                              ),
+                              Container(
+                                height: 1000,
+                                decoration: BoxDecoration(
+                                    border: Border(
+                                        left: BorderSide(color: Colors.white))),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      ' Skills',
+                                      style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 50,
+                                          fontWeight: FontWeight.w300),
+                                    ),
+                                    SizedBox(
+                                      height: 20,
+                                    ),
+                                    Text(
+                                      '  technical skills:',
+                                      style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 30,
+                                          color: Colors.white.withOpacity(0.6)),
+                                    ),
+                                    SizedBox(
+                                      height: 20,
+                                    ),
+                                    _skills,
+                                    Text(
+                                      '  language proeficiency:',
+                                      style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 30,
+                                          color: Colors.white.withOpacity(0.6)),
+                                    ),
+                                    SizedBox(
+                                      height: 20,
+                                    ),
+                                    _languages,
+                                    SizedBox(
+                                      height: 20,
+                                    ),
+                                    Text(
+                                      '  soft skills:',
+                                      style: TextStyle(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 30,
+                                          color: Colors.white.withOpacity(0.6)),
+                                    ),
+                                  ],
+                                ),
+                              )
+                            ],
                           ),
                         ],
                       ),
