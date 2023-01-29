@@ -39,6 +39,25 @@ _launchURLBrowser() async {
   }
 }
 
+void _launchURLBrowser_linkedin() async {
+  var url =
+      Uri.parse("https://www.linkedin.com/in/serban-mihail-chiriac-479b68259/");
+  if (await canLaunchUrl(url)) {
+    await launchUrl(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+
+void _launchURLBrowser_inst() async {
+  var url = Uri.parse("https://www.instagram.com/chiriacserbann/");
+  if (await canLaunchUrl(url)) {
+    await launchUrl(url);
+  } else {
+    throw 'Could not launch $url';
+  }
+}
+
 var _skills = Container(
   decoration: BoxDecoration(border: Border(left: BorderSide(width: 20))),
   child: Column(
@@ -97,6 +116,51 @@ var _languages = Container(
       ),
       Text('\u2022 romanian - native level',
           style: TextStyle(fontFamily: 'Outfit', fontSize: 25))
+    ],
+  ),
+);
+
+var _softSkills = Container(
+  decoration: BoxDecoration(border: Border(left: BorderSide(width: 20))),
+  child: Column(
+    mainAxisAlignment: MainAxisAlignment.start,
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Text(
+        '\u2022 communication',
+        style: TextStyle(fontFamily: 'Outfit', fontSize: 25),
+      ),
+      SizedBox(
+        height: 5,
+      ),
+      Text('\u2022 teamwork',
+          style: TextStyle(fontFamily: 'Outfit', fontSize: 25)),
+      SizedBox(
+        height: 5,
+      ),
+      Text('\u2022 problem-solving',
+          style: TextStyle(fontFamily: 'Outfit', fontSize: 25)),
+      SizedBox(
+        height: 5,
+      ),
+      Text('\u2022 time management',
+          style: TextStyle(fontFamily: 'Outfit', fontSize: 25)),
+      SizedBox(
+        height: 5,
+      ),
+      Text('\u2022 persuasion',
+          style: TextStyle(fontFamily: 'Outfit', fontSize: 25)),
+      SizedBox(
+        height: 5,
+      ),
+      Text('\u2022 creativity',
+          style: TextStyle(fontFamily: 'Outfit', fontSize: 25)),
+      SizedBox(
+        height: 5,
+      ),
+      SizedBox(
+        height: 20,
+      ),
     ],
   ),
 );
@@ -260,25 +324,35 @@ class _aplicatiaState extends State<aplicatia> {
                                       crossAxisAlignment:
                                           CrossAxisAlignment.center,
                                       children: [
-                                        Expanded(
-                                            child: Image.asset(
-                                          "./assets/github-mark-white.png",
-                                          width: 34,
-                                          height: 34,
-                                        )),
-                                        Expanded(
+                                        InkWell(
+                                          child: Image.asset(
+                                            "./assets/github-mark-white.png",
+                                            width: 34,
+                                            height: 34,
+                                          ),
+                                          onTap: () {
+                                            _launchURLBrowser();
+                                          },
+                                        ),
+                                        InkWell(
                                           child: Image.asset(
                                             "./assets/Linkedin.png",
                                             width: 40,
                                             height: 40,
                                           ),
+                                          onTap: () {
+                                            _launchURLBrowser_linkedin();
+                                          },
                                         ),
-                                        Expanded(
+                                        InkWell(
                                           child: Image.asset(
                                             "./assets/Instagram_icon.png",
                                             width: 35,
                                             height: 35,
                                           ),
+                                          onTap: () {
+                                            _launchURLBrowser_inst();
+                                          },
                                         ),
                                       ],
                                     ),
@@ -462,6 +536,10 @@ class _aplicatiaState extends State<aplicatia> {
                                           fontSize: 30,
                                           color: Colors.white.withOpacity(0.6)),
                                     ),
+                                    SizedBox(
+                                      height: 20,
+                                    ),
+                                    _softSkills,
                                   ],
                                 ),
                               )
