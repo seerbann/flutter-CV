@@ -312,7 +312,7 @@ class _aplicatiaState extends State<aplicatia> {
                                         fontSize: 20),
                                   ),
                                   onTap: () {
-                                    _scrollToIndex(1);
+                                    _scrollToIndex(3);
                                   },
                                 );
                               },
@@ -391,7 +391,8 @@ class _aplicatiaState extends State<aplicatia> {
                       controller: _controller,
                       scrollbarOrientation: ScrollbarOrientation.right,
                       thumbColor: Colors.purple.withOpacity(0.9),
-                      child: ListView(
+                      child: PageView(
+                        scrollDirection: Axis.vertical,
                         controller: _controller,
                         children: [
                           Container(
@@ -461,10 +462,7 @@ class _aplicatiaState extends State<aplicatia> {
                             ),
                           ),
                           //sized box dintre pag1 si pag2
-                          SizedBox(
-                            width: 1000,
-                            height: 500,
-                          ),
+
                           Row(
                             //rand project & skills
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -713,19 +711,17 @@ class _aplicatiaState extends State<aplicatia> {
                               )
                             ],
                           ),
-                          SizedBox(
-                            height: 200,
-                          ),
+
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               Expanded(
-                                flex: 4,
                                 child: Container(
-                                  decoration: BoxDecoration(
-                                      border:
-                                          Border(left: BorderSide(width: 15))),
                                   child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
                                     children: [
                                       Text('contact me',
                                           style: TextStyle(
@@ -763,9 +759,11 @@ class _aplicatiaState extends State<aplicatia> {
                                 ),
                               ),
                               Expanded(
-                                flex: 1,
                                 child: Container(
                                   child: Column(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
                                     children: [
                                       Text('0755952408'),
                                       SelectableText(
