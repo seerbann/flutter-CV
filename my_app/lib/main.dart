@@ -798,76 +798,137 @@ class _aplicatiaState extends State<aplicatia> {
         ),
       ),
       tablet: Scaffold(
-        appBar: AppBar(backgroundColor: Colors.black, title: Text('Chiriac')),
+        appBar: AppBar(backgroundColor: Colors.black, title: Text('CSM')),
         drawer: Drawer(
           backgroundColor: Colors.black,
-          child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-              DrawerHeader(
-                  decoration: BoxDecoration(color: Colors.grey),
+          child: Expanded(
+            child: Column(
+              children: [
+                Expanded(
+                  flex: 1,
                   child: Container(
                     child: Image.asset(
                       "./assets/pozaCV.png",
-                      height: 200,
-                      width: 200,
+                      height: 100,
+                      width: 100,
                     ),
-                  )),
-              ListTile(
-                title: OnHover(
-                  builder: (isHovered) {
-                    final _color = isHovered ? Colors.purple : Colors.white;
-                    return InkWell(
-                      child: Text(
-                        'home',
-                        style: TextStyle(
-                            color: _color, fontFamily: 'Roboto', fontSize: 20),
-                      ),
-                      onTap: () {
-                        _scrollToIndex(-1);
-                        Navigator.pop(context);
-                      },
-                    );
-                  },
+                  ),
                 ),
-              ),
-              ListTile(
-                title: OnHover(
-                  builder: (isHovered) {
-                    final _color = isHovered ? Colors.purple : Colors.white;
-                    return InkWell(
-                      child: Text(
-                        'curriculum vitae',
-                        style: TextStyle(
-                            color: _color, fontFamily: 'Roboto', fontSize: 20),
+                Expanded(
+                  flex: 2,
+                  child: Column(
+                    children: [
+                      ListTile(
+                        title: OnHover(
+                          builder: (isHovered) {
+                            final _color =
+                                isHovered ? Colors.purple : Colors.white;
+                            return InkWell(
+                              child: Text(
+                                'home',
+                                style: TextStyle(
+                                    color: _color,
+                                    fontFamily: 'Roboto',
+                                    fontSize: 20),
+                              ),
+                              onTap: () {
+                                _scrollToIndex(-1);
+                                Navigator.pop(context);
+                              },
+                            );
+                          },
+                        ),
                       ),
-                      onTap: () {
-                        _scrollToIndex(0);
-                        Navigator.pop(context);
-                      },
-                    );
-                  },
-                ),
-              ),
-              ListTile(
-                title: OnHover(
-                  builder: (isHovered) {
-                    final _color = isHovered ? Colors.purple : Colors.white;
-                    return InkWell(
-                      child: Text(
-                        'contact',
-                        style: TextStyle(
-                            color: _color, fontFamily: 'Roboto', fontSize: 20),
+                      ListTile(
+                        title: OnHover(
+                          builder: (isHovered) {
+                            final _color =
+                                isHovered ? Colors.purple : Colors.white;
+                            return InkWell(
+                              child: Text(
+                                'curriculum vitae',
+                                style: TextStyle(
+                                    color: _color,
+                                    fontFamily: 'Roboto',
+                                    fontSize: 20),
+                              ),
+                              onTap: () {
+                                _scrollToIndex(0);
+                                Navigator.pop(context);
+                              },
+                            );
+                          },
+                        ),
                       ),
-                      onTap: () {
-                        _scrollToIndex(1);
-                        Navigator.pop(context);
-                      },
-                    );
-                  },
+                      ListTile(
+                        title: OnHover(
+                          builder: (isHovered) {
+                            final _color =
+                                isHovered ? Colors.purple : Colors.white;
+                            return InkWell(
+                              child: Text(
+                                'contact',
+                                style: TextStyle(
+                                    color: _color,
+                                    fontFamily: 'Roboto',
+                                    fontSize: 20),
+                              ),
+                              onTap: () {
+                                _scrollToIndex(1);
+                                Navigator.pop(context);
+                              },
+                            );
+                          },
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
-              )
-            ],
+                Expanded(
+                  child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Container(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        children: [
+                          InkWell(
+                            child: Image.asset(
+                              "./assets/github-mark-white.png",
+                              width: 34,
+                              height: 34,
+                            ),
+                            onTap: () {
+                              _launchURLBrowser();
+                            },
+                          ),
+                          InkWell(
+                            child: Image.asset(
+                              "./assets/Linkedin.png",
+                              width: 40,
+                              height: 40,
+                            ),
+                            onTap: () {
+                              _launchURLBrowser_linkedin();
+                            },
+                          ),
+                          InkWell(
+                            child: Image.asset(
+                              "./assets/Instagram_icon.png",
+                              width: 35,
+                              height: 35,
+                            ),
+                            onTap: () {
+                              _launchURLBrowser_inst();
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
         backgroundColor: Colors.black,
