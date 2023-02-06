@@ -812,7 +812,61 @@ class _aplicatiaState extends State<aplicatia> {
                       height: 200,
                       width: 200,
                     ),
-                  ))
+                  )),
+              ListTile(
+                title: OnHover(
+                  builder: (isHovered) {
+                    final _color = isHovered ? Colors.purple : Colors.white;
+                    return InkWell(
+                      child: Text(
+                        'home',
+                        style: TextStyle(
+                            color: _color, fontFamily: 'Roboto', fontSize: 20),
+                      ),
+                      onTap: () {
+                        _scrollToIndex(-1);
+                        Navigator.pop(context);
+                      },
+                    );
+                  },
+                ),
+              ),
+              ListTile(
+                title: OnHover(
+                  builder: (isHovered) {
+                    final _color = isHovered ? Colors.purple : Colors.white;
+                    return InkWell(
+                      child: Text(
+                        'curriculum vitae',
+                        style: TextStyle(
+                            color: _color, fontFamily: 'Roboto', fontSize: 20),
+                      ),
+                      onTap: () {
+                        _scrollToIndex(0);
+                        Navigator.pop(context);
+                      },
+                    );
+                  },
+                ),
+              ),
+              ListTile(
+                title: OnHover(
+                  builder: (isHovered) {
+                    final _color = isHovered ? Colors.purple : Colors.white;
+                    return InkWell(
+                      child: Text(
+                        'contact',
+                        style: TextStyle(
+                            color: _color, fontFamily: 'Roboto', fontSize: 20),
+                      ),
+                      onTap: () {
+                        _scrollToIndex(1);
+                        Navigator.pop(context);
+                      },
+                    );
+                  },
+                ),
+              )
             ],
           ),
         ),
