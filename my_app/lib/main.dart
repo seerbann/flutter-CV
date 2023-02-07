@@ -904,22 +904,12 @@ class _aplicatiaState extends State<aplicatia> {
                           ),
                           InkWell(
                             child: Image.asset(
-                              "./assets/Linkedin.png",
-                              width: 40,
-                              height: 40,
+                              "./assets/linkedin.png",
+                              width: 45,
+                              height: 45,
                             ),
                             onTap: () {
                               _launchURLBrowser_linkedin();
-                            },
-                          ),
-                          InkWell(
-                            child: Image.asset(
-                              "./assets/Instagram_icon.png",
-                              width: 35,
-                              height: 35,
-                            ),
-                            onTap: () {
-                              _launchURLBrowser_inst();
                             },
                           ),
                         ],
@@ -927,6 +917,9 @@ class _aplicatiaState extends State<aplicatia> {
                     ),
                   ),
                 ),
+                SizedBox(
+                  height: 15,
+                )
               ],
             ),
           ),
