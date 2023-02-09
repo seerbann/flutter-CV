@@ -184,6 +184,7 @@ class aplicatia extends StatefulWidget {
 }
 
 PageController _controller = PageController();
+bool _hovered = false;
 
 class _aplicatiaState extends State<aplicatia> {
   @override
@@ -457,6 +458,7 @@ class _aplicatiaState extends State<aplicatia> {
                                       SizedBox(
                                         height: 500,
                                       ),
+                                      //flag
                                       Container(
                                         decoration: BoxDecoration(
                                           border: Border(
@@ -464,6 +466,33 @@ class _aplicatiaState extends State<aplicatia> {
                                           color: Colors.grey.withOpacity(0.1),
                                         ),
                                         height: 100,
+                                        child: Center(
+                                          child: Column(
+                                            children: [
+                                              Text('Curriculum Vitae',
+                                                  style: TextStyle(
+                                                      fontFamily: 'Roboto',
+                                                      fontSize: 50,
+                                                      fontWeight:
+                                                          FontWeight.w300)),
+                                              Row(
+                                                mainAxisAlignment:
+                                                    MainAxisAlignment.center,
+                                                children: [
+                                                  Text(
+                                                      'also check the A4 version '),
+                                                  InkWell(
+                                                      child: Text(
+                                                    'here',
+                                                    style: TextStyle(
+                                                      color: Colors.blue,
+                                                    ),
+                                                  ))
+                                                ],
+                                              )
+                                            ],
+                                          ),
+                                        ),
                                       ),
                                       SizedBox(
                                         height: 30,
@@ -955,406 +984,450 @@ class _aplicatiaState extends State<aplicatia> {
                         controller: _controller,
                         scrollbarOrientation: ScrollbarOrientation.right,
                         thumbColor: Colors.purple.withOpacity(0.9),
-                        child: PageView(
-                          scrollDirection: Axis.vertical,
-                          controller: _controller,
-                          children: [
-                            Container(
-                              alignment: Alignment.center,
-                              decoration: BoxDecoration(
-                                  color: Colors.black,
-                                  border: Border(
-                                      left: BorderSide(width: 100),
-                                      top: BorderSide(width: 200))),
-                              child: Column(
-                                //mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  Container(
-                                    child: AnimatedTextKit(
-                                      animatedTexts: [
-                                        TypewriterAnimatedText(
-                                          'Hello',
-                                          textStyle: const TextStyle(
-                                              fontSize: 30.0,
-                                              fontWeight: FontWeight.bold,
-                                              fontFamily: 'Outfit'),
-                                          speed:
-                                              const Duration(milliseconds: 250),
-                                        ),
-                                      ],
-                                      isRepeatingAnimation: false,
-                                    ),
-                                  ),
-                                  Container(
-                                      decoration: BoxDecoration(
-                                        border: Border(
-                                          right: BorderSide(width: 50),
-                                        ),
-                                      ),
-                                      // width: 850,
-                                      // height: 150,
-                                      child: Flexible(
-                                        child: Text(
-                                          'I am a highly motivated computer science student based in Iasi , Romania with a strong interest in sports and a strong, dedicated team player. Working well in a team environment, as well as excellent communication and interpersonal skills.',
-                                          textAlign: TextAlign.justify,
-                                          style: TextStyle(
-                                              height: 1.3,
-                                              fontFamily: 'Outfit',
-                                              fontSize: 25,
-                                              color: Colors.white
-                                                  .withOpacity(0.8)),
-                                        ),
-                                      )),
-                                  Container(
-                                    decoration: BoxDecoration(
-                                        border: Border(
-                                            left: BorderSide(width: 20),
-                                            top: BorderSide(width: 20))),
-                                    child: TextButton(
-                                        style: ButtonStyle(
-                                          backgroundColor:
-                                              MaterialStatePropertyAll<Color>(
-                                                  Colors.purple),
-                                          foregroundColor:
-                                              MaterialStateProperty.all<Color>(
-                                                  Colors.white),
-                                        ),
-                                        onPressed: (() {
-                                          _scrollToIndex(0);
-                                        }),
-                                        child: Text(
-                                          "See my CV",
-                                          style: TextStyle(
-                                              fontFamily: 'Outfit',
-                                              fontSize: 25),
-                                        )),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            //sized box dintre pag1 si pag2
-
-                            Row(
-                              //rand project & skills
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        child: SingleChildScrollView(
+                            scrollDirection: Axis.vertical,
+                            controller: _controller,
+                            child: Column(
                               children: [
-                                Expanded(
-                                  flex: 5,
+                                Container(
+                                  alignment: Alignment.center,
+                                  decoration: BoxDecoration(
+                                      color: Colors.black,
+                                      border: Border(
+                                          left: BorderSide(width: 100),
+                                          top: BorderSide(width: 200))),
                                   child: Column(
-                                    //coloara stanga (cv)
+                                    //mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
-                                    children: [
+                                    children: <Widget>[
                                       Container(
-                                        height: 500,
+                                        child: AnimatedTextKit(
+                                          animatedTexts: [
+                                            TypewriterAnimatedText(
+                                              'Hello',
+                                              textStyle: const TextStyle(
+                                                  fontSize: 30.0,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontFamily: 'Outfit'),
+                                              speed: const Duration(
+                                                  milliseconds: 250),
+                                            ),
+                                          ],
+                                          isRepeatingAnimation: false,
+                                        ),
+                                      ),
+                                      Container(
+                                          decoration: BoxDecoration(
+                                            border: Border(
+                                              right: BorderSide(width: 50),
+                                            ),
+                                          ),
+                                          // width: 850,
+                                          // height: 150,
+                                          child: Flexible(
+                                            child: Text(
+                                              'I am a highly motivated computer science student based in Iasi , Romania with a strong interest in sports and a strong, dedicated team player. Working well in a team environment, as well as excellent communication and interpersonal skills.',
+                                              textAlign: TextAlign.justify,
+                                              style: TextStyle(
+                                                  height: 1.3,
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 25,
+                                                  color: Colors.white
+                                                      .withOpacity(0.8)),
+                                            ),
+                                          )),
+                                      Container(
                                         decoration: BoxDecoration(
                                             border: Border(
-                                                left: BorderSide(width: 50))),
-                                        child: Column(
-                                          //coloana proiecte
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                                left: BorderSide(width: 20),
+                                                top: BorderSide(width: 20))),
+                                        child: TextButton(
+                                            style: ButtonStyle(
+                                              backgroundColor:
+                                                  MaterialStatePropertyAll<
+                                                      Color>(Colors.purple),
+                                              foregroundColor:
+                                                  MaterialStateProperty.all<
+                                                      Color>(Colors.white),
+                                            ),
+                                            onPressed: (() {
+                                              _scrollToIndex(0);
+                                            }),
+                                            child: Text(
+                                              "See my CV",
+                                              style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 25),
+                                            )),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                //sized box dintre pag1 si pag2
+                                SizedBox(
+                                  height: 450,
+                                ),
+                                Container(
+                                  decoration: BoxDecoration(
+                                    border:
+                                        Border(right: BorderSide(width: 150)),
+                                    color: Colors.grey.withOpacity(0.1),
+                                  ),
+                                  height: 100,
+                                  child: Center(
+                                    child: Column(
+                                      children: [
+                                        Text('Curriculum Vitae',
+                                            style: TextStyle(
+                                                fontFamily: 'Roboto',
+                                                fontSize: 50,
+                                                fontWeight: FontWeight.w300)),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
                                           children: [
-                                            Container(
-                                              decoration: BoxDecoration(
-                                                  border: Border(
-                                                      left: BorderSide(
-                                                          width: 10))),
-                                              child: Text(
-                                                'Projects',
+                                            Text('also check the A4 version '),
+                                            InkWell(
+                                                child: Text(
+                                              'here',
+                                              style: TextStyle(
+                                                color: Colors.blue,
+                                              ),
+                                            ))
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Row(
+                                  //rand project & skills
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Expanded(
+                                      flex: 5,
+                                      child: Column(
+                                        //coloara stanga (cv)
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Container(
+                                            height: 500,
+                                            decoration: BoxDecoration(
+                                                border: Border(
+                                                    left:
+                                                        BorderSide(width: 50))),
+                                            child: Column(
+                                              //coloana proiecte
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Container(
+                                                  decoration: BoxDecoration(
+                                                      border: Border(
+                                                          left: BorderSide(
+                                                              width: 10))),
+                                                  child: Text(
+                                                    'Projects',
+                                                    style: TextStyle(
+                                                        fontFamily: 'Outfit',
+                                                        fontSize: 50,
+                                                        fontWeight:
+                                                            FontWeight.w300),
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  height: 20,
+                                                ),
+                                                //1st proj
+                                                Container(
+                                                  decoration: BoxDecoration(
+                                                      border: Border(
+                                                          left: BorderSide(
+                                                              width: 50))),
+                                                  child: Text(
+                                                    '\u2022 Analogic and Digital Clock made with C++',
+                                                    style: TextStyle(
+                                                        fontFamily: 'Outfit',
+                                                        fontSize: 25),
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  height: 10,
+                                                ),
+                                                Container(
+                                                  decoration: BoxDecoration(
+                                                      border: Border(
+                                                          left: BorderSide(
+                                                              width: 75))),
+                                                  child: Text(
+                                                      '  clock program written in C++ with a simple graphic library (Borland Graphics Interface).',
+                                                      style: TextStyle(
+                                                        fontFamily: 'Outfit',
+                                                      )),
+                                                ),
+                                                SizedBox(
+                                                  height: 10,
+                                                ),
+                                                Container(
+                                                  alignment: Alignment.center,
+                                                  width: 500,
+                                                  child: InkWell(
+                                                    child: Text(
+                                                        'click here for GitHub repository & a short documentation',
+                                                        style: TextStyle(
+                                                          color: Colors.white
+                                                              .withOpacity(0.7),
+                                                          fontFamily: 'Outfit',
+                                                        )),
+                                                    onTap: () {
+                                                      _launchURLBrowser_clock();
+                                                    },
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Divider(
+                                            color: Colors.white,
+                                          ),
+                                          //education
+                                          Container(
+                                            height: 300,
+
+                                            //coloana education
+                                            child: Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Container(
+                                                    decoration: BoxDecoration(
+                                                        border: Border(
+                                                            left: BorderSide(
+                                                                width: 50))),
+                                                    child: Column(
+                                                      children: [
+                                                        Text(
+                                                          'Education',
+                                                          style: TextStyle(
+                                                              fontFamily:
+                                                                  'Outfit',
+                                                              fontSize: 50,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w300),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 20,
+                                                  ),
+                                                  //1st proj
+                                                  Container(
+                                                    decoration: BoxDecoration(
+                                                        border: Border(
+                                                            left: BorderSide(
+                                                                width: 50))),
+                                                    child: Text(
+                                                      '\u2022 Faculty of Computer Science Iasi',
+                                                      style: TextStyle(
+                                                          fontFamily: 'Outfit',
+                                                          fontSize: 25),
+                                                    ),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 10,
+                                                  ),
+                                                  Container(
+                                                    decoration: BoxDecoration(
+                                                        border: Border(
+                                                            left: BorderSide(
+                                                                width: 100))),
+                                                    child: Text(
+                                                        '(October 2022-Present)'),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 15,
+                                                  ),
+
+                                                  Container(
+                                                    decoration: BoxDecoration(
+                                                        border: Border(
+                                                            left: BorderSide(
+                                                                width: 70))),
+                                                    child: Text(
+                                                      'relavant coursework:',
+                                                      style: TextStyle(
+                                                          fontFamily: 'Outfit',
+                                                          fontSize: 25,
+                                                          color: Colors.white
+                                                              .withOpacity(
+                                                                  0.7)),
+                                                    ),
+                                                  ),
+                                                  Container(
+                                                    decoration: BoxDecoration(
+                                                        border: Border(
+                                                            left: BorderSide(
+                                                                width: 75))),
+                                                    child: Text(
+                                                      "data strucutres",
+                                                      style: TextStyle(
+                                                          fontFamily: 'Outfit',
+                                                          fontSize: 25),
+                                                    ),
+                                                  )
+                                                ]),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    Expanded(
+                                      flex: 3,
+                                      child: Container(
+                                        alignment: Alignment.topCenter,
+                                        decoration: BoxDecoration(
+                                            border: Border(
+                                                left: BorderSide(
+                                                    color: Colors.white
+                                                        .withOpacity(0.5)))),
+                                        //height: 800,
+                                        child: Expanded(
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                ' Skills',
                                                 style: TextStyle(
                                                     fontFamily: 'Outfit',
                                                     fontSize: 50,
                                                     fontWeight:
                                                         FontWeight.w300),
                                               ),
-                                            ),
-                                            SizedBox(
-                                              height: 20,
-                                            ),
-                                            //1st proj
-                                            Container(
-                                              decoration: BoxDecoration(
-                                                  border: Border(
-                                                      left: BorderSide(
-                                                          width: 50))),
-                                              child: Text(
-                                                '\u2022 Analogic and Digital Clock made with C++',
+                                              SizedBox(
+                                                height: 20,
+                                              ),
+                                              Text(
+                                                '  technical skills:',
                                                 style: TextStyle(
                                                     fontFamily: 'Outfit',
-                                                    fontSize: 25),
-                                              ),
-                                            ),
-                                            SizedBox(
-                                              height: 10,
-                                            ),
-                                            Container(
-                                              decoration: BoxDecoration(
-                                                  border: Border(
-                                                      left: BorderSide(
-                                                          width: 75))),
-                                              child: Text(
-                                                  '  clock program written in C++ with a simple graphic library (Borland Graphics Interface).',
-                                                  style: TextStyle(
-                                                    fontFamily: 'Outfit',
-                                                  )),
-                                            ),
-                                            SizedBox(
-                                              height: 10,
-                                            ),
-                                            Container(
-                                              alignment: Alignment.center,
-                                              width: 500,
-                                              child: InkWell(
-                                                child: Text(
-                                                    'click here for GitHub repository & a short documentation',
-                                                    style: TextStyle(
-                                                      color: Colors.white
-                                                          .withOpacity(0.7),
-                                                      fontFamily: 'Outfit',
-                                                    )),
-                                                onTap: () {
-                                                  _launchURLBrowser_clock();
-                                                },
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      Divider(
-                                        color: Colors.white,
-                                      ),
-                                      //education
-                                      Container(
-                                        height: 300,
-
-                                        //coloana education
-                                        child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Container(
-                                                decoration: BoxDecoration(
-                                                    border: Border(
-                                                        left: BorderSide(
-                                                            width: 50))),
-                                                child: Column(
-                                                  children: [
-                                                    Text(
-                                                      'Education',
-                                                      style: TextStyle(
-                                                          fontFamily: 'Outfit',
-                                                          fontSize: 50,
-                                                          fontWeight:
-                                                              FontWeight.w300),
-                                                    ),
-                                                  ],
-                                                ),
+                                                    fontSize: 30,
+                                                    color: Colors.white
+                                                        .withOpacity(0.6)),
                                               ),
                                               SizedBox(
                                                 height: 20,
                                               ),
-                                              //1st proj
-                                              Container(
-                                                decoration: BoxDecoration(
-                                                    border: Border(
-                                                        left: BorderSide(
-                                                            width: 50))),
-                                                child: Text(
-                                                  '\u2022 Faculty of Computer Science Iasi',
-                                                  style: TextStyle(
-                                                      fontFamily: 'Outfit',
-                                                      fontSize: 25),
-                                                ),
+                                              _skills,
+                                              Text(
+                                                '  language proeficiency:',
+                                                style: TextStyle(
+                                                    fontFamily: 'Outfit',
+                                                    fontSize: 30,
+                                                    color: Colors.white
+                                                        .withOpacity(0.6)),
                                               ),
                                               SizedBox(
-                                                height: 10,
+                                                height: 20,
                                               ),
-                                              Container(
-                                                decoration: BoxDecoration(
-                                                    border: Border(
-                                                        left: BorderSide(
-                                                            width: 100))),
-                                                child: Text(
-                                                    '(October 2022-Present)'),
+                                              _languages,
+                                              SizedBox(
+                                                height: 20,
+                                              ),
+                                              Text(
+                                                '  soft skills:',
+                                                style: TextStyle(
+                                                    fontFamily: 'Outfit',
+                                                    fontSize: 30,
+                                                    color: Colors.white
+                                                        .withOpacity(0.6)),
                                               ),
                                               SizedBox(
                                                 height: 15,
                                               ),
-
-                                              Container(
-                                                decoration: BoxDecoration(
-                                                    border: Border(
-                                                        left: BorderSide(
-                                                            width: 70))),
-                                                child: Text(
-                                                  'relavant coursework:',
-                                                  style: TextStyle(
-                                                      fontFamily: 'Outfit',
-                                                      fontSize: 25,
-                                                      color: Colors.white
-                                                          .withOpacity(0.7)),
-                                                ),
-                                              ),
-                                              Container(
-                                                decoration: BoxDecoration(
-                                                    border: Border(
-                                                        left: BorderSide(
-                                                            width: 75))),
-                                                child: Text(
-                                                  "data strucutres",
-                                                  style: TextStyle(
-                                                      fontFamily: 'Outfit',
-                                                      fontSize: 25),
-                                                ),
-                                              )
-                                            ]),
-                                      )
-                                    ],
-                                  ),
+                                              _softSkills,
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    )
+                                  ],
                                 ),
-                                Expanded(
-                                  flex: 3,
-                                  child: Container(
-                                    alignment: Alignment.topCenter,
-                                    decoration: BoxDecoration(
-                                        border: Border(
-                                            left: BorderSide(
-                                                color: Colors.white
-                                                    .withOpacity(0.5)))),
-                                    //height: 800,
-                                    child: Expanded(
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            ' Skills',
-                                            style: TextStyle(
-                                                fontFamily: 'Outfit',
-                                                fontSize: 50,
-                                                fontWeight: FontWeight.w300),
-                                          ),
-                                          SizedBox(
-                                            height: 20,
-                                          ),
-                                          Text(
-                                            '  technical skills:',
-                                            style: TextStyle(
-                                                fontFamily: 'Outfit',
-                                                fontSize: 30,
-                                                color: Colors.white
-                                                    .withOpacity(0.6)),
-                                          ),
-                                          SizedBox(
-                                            height: 20,
-                                          ),
-                                          _skills,
-                                          Text(
-                                            '  language proeficiency:',
-                                            style: TextStyle(
-                                                fontFamily: 'Outfit',
-                                                fontSize: 30,
-                                                color: Colors.white
-                                                    .withOpacity(0.6)),
-                                          ),
-                                          SizedBox(
-                                            height: 20,
-                                          ),
-                                          _languages,
-                                          SizedBox(
-                                            height: 20,
-                                          ),
-                                          Text(
-                                            '  soft skills:',
-                                            style: TextStyle(
-                                                fontFamily: 'Outfit',
-                                                fontSize: 30,
-                                                color: Colors.white
-                                                    .withOpacity(0.6)),
-                                          ),
-                                          SizedBox(
-                                            height: 15,
-                                          ),
-                                          _softSkills,
-                                        ],
+
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Expanded(
+                                      child: Container(
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Text('contact me',
+                                                style: TextStyle(
+                                                    fontFamily: 'Outfit',
+                                                    fontSize: 20,
+                                                    color: Colors.white)),
+                                            SizedBox(
+                                              width: 20,
+                                            ),
+                                            InkWell(
+                                              child: Image.asset(
+                                                "./assets/Linkedin.png",
+                                                width: 40,
+                                                height: 40,
+                                              ),
+                                              onTap: () {
+                                                _launchURLBrowser_linkedin();
+                                              },
+                                            ),
+                                            SizedBox(
+                                              width: 10,
+                                            ),
+                                            InkWell(
+                                              child: Image.asset(
+                                                "./assets/Instagram_icon.png",
+                                                width: 35,
+                                                height: 35,
+                                              ),
+                                              onTap: () {
+                                                _launchURLBrowser_inst();
+                                              },
+                                            ),
+                                          ],
+                                        ),
                                       ),
                                     ),
-                                  ),
+                                    Expanded(
+                                      child: Container(
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Text('0755952408'),
+                                            SelectableText(
+                                                'serbanm.chiriac@gmail.com')
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 200,
+                                    )
+                                  ],
                                 )
                               ],
-                            ),
-
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Expanded(
-                                  child: Container(
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        Text('contact me',
-                                            style: TextStyle(
-                                                fontFamily: 'Outfit',
-                                                fontSize: 20,
-                                                color: Colors.white)),
-                                        SizedBox(
-                                          width: 20,
-                                        ),
-                                        InkWell(
-                                          child: Image.asset(
-                                            "./assets/Linkedin.png",
-                                            width: 40,
-                                            height: 40,
-                                          ),
-                                          onTap: () {
-                                            _launchURLBrowser_linkedin();
-                                          },
-                                        ),
-                                        SizedBox(
-                                          width: 10,
-                                        ),
-                                        InkWell(
-                                          child: Image.asset(
-                                            "./assets/Instagram_icon.png",
-                                            width: 35,
-                                            height: 35,
-                                          ),
-                                          onTap: () {
-                                            _launchURLBrowser_inst();
-                                          },
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Container(
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        Text('0755952408'),
-                                        SelectableText(
-                                            'serbanm.chiriac@gmail.com')
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 200,
-                                )
-                              ],
-                            )
-                          ],
-                        ),
+                            )),
                       ),
                     ),
                   ],
@@ -1509,406 +1582,448 @@ class _aplicatiaState extends State<aplicatia> {
                         controller: _controller,
                         scrollbarOrientation: ScrollbarOrientation.right,
                         thumbColor: Colors.purple.withOpacity(0.9),
-                        child: PageView(
-                          scrollDirection: Axis.vertical,
-                          controller: _controller,
-                          children: [
-                            Container(
-                              alignment: Alignment.center,
-                              decoration: BoxDecoration(
-                                  color: Colors.black,
-                                  border: Border(
-                                      left: BorderSide(width: 50),
-                                      top: BorderSide(width: 150))),
-                              child: Column(
-                                //mainAxisAlignment: MainAxisAlignment.start,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: <Widget>[
-                                  Container(
-                                    child: AnimatedTextKit(
-                                      animatedTexts: [
-                                        TypewriterAnimatedText(
-                                          'Hello',
-                                          textStyle: const TextStyle(
-                                              fontSize: 30.0,
-                                              fontWeight: FontWeight.bold,
-                                              fontFamily: 'Outfit'),
-                                          speed:
-                                              const Duration(milliseconds: 250),
-                                        ),
-                                      ],
-                                      isRepeatingAnimation: false,
-                                    ),
-                                  ),
-                                  Container(
-                                      decoration: BoxDecoration(
-                                        border: Border(
-                                          right: BorderSide(width: 50),
-                                        ),
-                                      ),
-                                      // width: 850,
-                                      // height: 150,
-                                      child: Flexible(
-                                        child: Text(
-                                          'I am a highly motivated computer science student based in Iasi , Romania with a strong interest in sports and a strong, dedicated team player. Working well in a team environment, as well as excellent communication and interpersonal skills.',
-                                          textAlign: TextAlign.justify,
-                                          style: TextStyle(
-                                              height: 1.3,
-                                              fontFamily: 'Outfit',
-                                              fontSize: 25,
-                                              color: Colors.white
-                                                  .withOpacity(0.8)),
-                                        ),
-                                      )),
-                                  Container(
-                                    decoration: BoxDecoration(
-                                        border: Border(
-                                            left: BorderSide(width: 20),
-                                            top: BorderSide(width: 20))),
-                                    child: TextButton(
-                                        style: ButtonStyle(
-                                          backgroundColor:
-                                              MaterialStatePropertyAll<Color>(
-                                                  Colors.purple),
-                                          foregroundColor:
-                                              MaterialStateProperty.all<Color>(
-                                                  Colors.white),
-                                        ),
-                                        onPressed: (() {
-                                          _scrollToIndex(0);
-                                        }),
-                                        child: Text(
-                                          "See my CV",
-                                          style: TextStyle(
-                                              fontFamily: 'Outfit',
-                                              fontSize: 25),
-                                        )),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            //sized box dintre pag1 si pag2
-
-                            Row(
-                              //rand project & skills
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        child: SingleChildScrollView(
+                            scrollDirection: Axis.vertical,
+                            controller: _controller,
+                            child: Column(
                               children: [
-                                Expanded(
-                                  flex: 5,
+                                Container(
+                                  alignment: Alignment.center,
+                                  decoration: BoxDecoration(
+                                      color: Colors.black,
+                                      border: Border(
+                                          left: BorderSide(width: 50),
+                                          top: BorderSide(width: 150))),
                                   child: Column(
-                                    //coloara stanga (cv)
+                                    //mainAxisAlignment: MainAxisAlignment.start,
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
-                                    children: [
+                                    children: <Widget>[
                                       Container(
-                                        height: 500,
+                                        child: AnimatedTextKit(
+                                          animatedTexts: [
+                                            TypewriterAnimatedText(
+                                              'Hello',
+                                              textStyle: const TextStyle(
+                                                  fontSize: 30.0,
+                                                  fontWeight: FontWeight.bold,
+                                                  fontFamily: 'Outfit'),
+                                              speed: const Duration(
+                                                  milliseconds: 250),
+                                            ),
+                                          ],
+                                          isRepeatingAnimation: false,
+                                        ),
+                                      ),
+                                      Container(
+                                          decoration: BoxDecoration(
+                                            border: Border(
+                                              right: BorderSide(width: 50),
+                                            ),
+                                          ),
+                                          // width: 850,
+                                          // height: 150,
+                                          child: Flexible(
+                                            child: Text(
+                                              'I am a highly motivated computer science student based in Iasi , Romania with a strong interest in sports and a strong, dedicated team player. Working well in a team environment, as well as excellent communication and interpersonal skills.',
+                                              textAlign: TextAlign.justify,
+                                              style: TextStyle(
+                                                  height: 1.3,
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 25,
+                                                  color: Colors.white
+                                                      .withOpacity(0.8)),
+                                            ),
+                                          )),
+                                      Container(
                                         decoration: BoxDecoration(
                                             border: Border(
-                                                left: BorderSide(width: 50))),
-                                        child: Column(
-                                          //coloana proiecte
-                                          crossAxisAlignment:
-                                              CrossAxisAlignment.start,
+                                                left: BorderSide(width: 20),
+                                                top: BorderSide(width: 20))),
+                                        child: TextButton(
+                                            style: ButtonStyle(
+                                              backgroundColor:
+                                                  MaterialStatePropertyAll<
+                                                      Color>(Colors.purple),
+                                              foregroundColor:
+                                                  MaterialStateProperty.all<
+                                                      Color>(Colors.white),
+                                            ),
+                                            onPressed: (() {
+                                              _scrollToIndex(0);
+                                            }),
+                                            child: Text(
+                                              "See my CV",
+                                              style: TextStyle(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 25),
+                                            )),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                //sized box dintre pag1 si pag2
+                                SizedBox(
+                                  height: 400,
+                                ),
+                                Container(
+                                  decoration: BoxDecoration(
+                                    color: Colors.grey.withOpacity(0.1),
+                                  ),
+                                  height: 100,
+                                  child: Center(
+                                    child: Column(
+                                      children: [
+                                        Text('Curriculum Vitae',
+                                            style: TextStyle(
+                                                fontFamily: 'Roboto',
+                                                fontSize: 50,
+                                                fontWeight: FontWeight.w300)),
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
                                           children: [
-                                            Container(
-                                              decoration: BoxDecoration(
-                                                  border: Border(
-                                                      left: BorderSide(
-                                                          width: 10))),
-                                              child: Text(
-                                                'Projects',
+                                            Text('also check the A4 version '),
+                                            InkWell(
+                                                child: Text(
+                                              'here',
+                                              style: TextStyle(
+                                                color: Colors.blue,
+                                              ),
+                                            ))
+                                          ],
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                Row(
+                                  //rand project & skills
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Expanded(
+                                      flex: 5,
+                                      child: Column(
+                                        //coloara stanga (cv)
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
+                                        children: [
+                                          Container(
+                                            height: 500,
+                                            decoration: BoxDecoration(
+                                                border: Border(
+                                                    left:
+                                                        BorderSide(width: 50))),
+                                            child: Column(
+                                              //coloana proiecte
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Container(
+                                                  decoration: BoxDecoration(
+                                                      border: Border(
+                                                          left: BorderSide(
+                                                              width: 10))),
+                                                  child: Text(
+                                                    'Projects',
+                                                    style: TextStyle(
+                                                        fontFamily: 'Outfit',
+                                                        fontSize: 50,
+                                                        fontWeight:
+                                                            FontWeight.w300),
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  height: 20,
+                                                ),
+                                                //1st proj
+                                                Container(
+                                                  decoration: BoxDecoration(
+                                                      border: Border(
+                                                          left: BorderSide(
+                                                              width: 50))),
+                                                  child: Text(
+                                                    '\u2022 Analogic and Digital Clock made with C++',
+                                                    style: TextStyle(
+                                                        fontFamily: 'Outfit',
+                                                        fontSize: 25),
+                                                  ),
+                                                ),
+                                                SizedBox(
+                                                  height: 10,
+                                                ),
+                                                Container(
+                                                  decoration: BoxDecoration(
+                                                      border: Border(
+                                                          left: BorderSide(
+                                                              width: 75))),
+                                                  child: Text(
+                                                      '  clock program written in C++ with a simple graphic library (Borland Graphics Interface).',
+                                                      style: TextStyle(
+                                                        fontFamily: 'Outfit',
+                                                      )),
+                                                ),
+                                                SizedBox(
+                                                  height: 10,
+                                                ),
+                                                Container(
+                                                  alignment: Alignment.center,
+                                                  width: 500,
+                                                  child: InkWell(
+                                                    child: Text(
+                                                        'click here for GitHub repository & a short documentation',
+                                                        style: TextStyle(
+                                                          color: Colors.white
+                                                              .withOpacity(0.7),
+                                                          fontFamily: 'Outfit',
+                                                        )),
+                                                    onTap: () {
+                                                      _launchURLBrowser_clock();
+                                                    },
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                          Divider(
+                                            color: Colors.white,
+                                          ),
+                                          //education
+                                          Container(
+                                            height: 300,
+
+                                            //coloana education
+                                            child: Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  Container(
+                                                    decoration: BoxDecoration(
+                                                        border: Border(
+                                                            left: BorderSide(
+                                                                width: 50))),
+                                                    child: Column(
+                                                      children: [
+                                                        Text(
+                                                          'Education',
+                                                          style: TextStyle(
+                                                              fontFamily:
+                                                                  'Outfit',
+                                                              fontSize: 50,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w300),
+                                                        ),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 20,
+                                                  ),
+                                                  //1st proj
+                                                  Container(
+                                                    decoration: BoxDecoration(
+                                                        border: Border(
+                                                            left: BorderSide(
+                                                                width: 50))),
+                                                    child: Text(
+                                                      '\u2022 Faculty of Computer Science Iasi',
+                                                      style: TextStyle(
+                                                          fontFamily: 'Outfit',
+                                                          fontSize: 25),
+                                                    ),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 10,
+                                                  ),
+                                                  Container(
+                                                    decoration: BoxDecoration(
+                                                        border: Border(
+                                                            left: BorderSide(
+                                                                width: 100))),
+                                                    child: Text(
+                                                        '(October 2022-Present)'),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 15,
+                                                  ),
+
+                                                  Container(
+                                                    decoration: BoxDecoration(
+                                                        border: Border(
+                                                            left: BorderSide(
+                                                                width: 70))),
+                                                    child: Text(
+                                                      'relavant coursework:',
+                                                      style: TextStyle(
+                                                          fontFamily: 'Outfit',
+                                                          fontSize: 25,
+                                                          color: Colors.white
+                                                              .withOpacity(
+                                                                  0.7)),
+                                                    ),
+                                                  ),
+                                                  Container(
+                                                    decoration: BoxDecoration(
+                                                        border: Border(
+                                                            left: BorderSide(
+                                                                width: 75))),
+                                                    child: Text(
+                                                      "data strucutres",
+                                                      style: TextStyle(
+                                                          fontFamily: 'Outfit',
+                                                          fontSize: 25),
+                                                    ),
+                                                  )
+                                                ]),
+                                          )
+                                        ],
+                                      ),
+                                    ),
+                                    Expanded(
+                                      flex: 3,
+                                      child: Container(
+                                        alignment: Alignment.topCenter,
+                                        decoration: BoxDecoration(
+                                            border: Border(
+                                                left: BorderSide(
+                                                    color: Colors.white
+                                                        .withOpacity(0.5)))),
+                                        //height: 800,
+                                        child: Expanded(
+                                          child: Column(
+                                            crossAxisAlignment:
+                                                CrossAxisAlignment.start,
+                                            children: [
+                                              Text(
+                                                ' Skills',
                                                 style: TextStyle(
                                                     fontFamily: 'Outfit',
                                                     fontSize: 50,
                                                     fontWeight:
                                                         FontWeight.w300),
                                               ),
-                                            ),
-                                            SizedBox(
-                                              height: 20,
-                                            ),
-                                            //1st proj
-                                            Container(
-                                              decoration: BoxDecoration(
-                                                  border: Border(
-                                                      left: BorderSide(
-                                                          width: 50))),
-                                              child: Text(
-                                                '\u2022 Analogic and Digital Clock made with C++',
+                                              SizedBox(
+                                                height: 20,
+                                              ),
+                                              Text(
+                                                '  technical skills:',
                                                 style: TextStyle(
                                                     fontFamily: 'Outfit',
-                                                    fontSize: 25),
-                                              ),
-                                            ),
-                                            SizedBox(
-                                              height: 10,
-                                            ),
-                                            Container(
-                                              decoration: BoxDecoration(
-                                                  border: Border(
-                                                      left: BorderSide(
-                                                          width: 75))),
-                                              child: Text(
-                                                  '  clock program written in C++ with a simple graphic library (Borland Graphics Interface).',
-                                                  style: TextStyle(
-                                                    fontFamily: 'Outfit',
-                                                  )),
-                                            ),
-                                            SizedBox(
-                                              height: 10,
-                                            ),
-                                            Container(
-                                              alignment: Alignment.center,
-                                              width: 500,
-                                              child: InkWell(
-                                                child: Text(
-                                                    'click here for GitHub repository & a short documentation',
-                                                    style: TextStyle(
-                                                      color: Colors.white
-                                                          .withOpacity(0.7),
-                                                      fontFamily: 'Outfit',
-                                                    )),
-                                                onTap: () {
-                                                  _launchURLBrowser_clock();
-                                                },
-                                              ),
-                                            ),
-                                          ],
-                                        ),
-                                      ),
-                                      Divider(
-                                        color: Colors.white,
-                                      ),
-                                      //education
-                                      Container(
-                                        height: 300,
-
-                                        //coloana education
-                                        child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Container(
-                                                decoration: BoxDecoration(
-                                                    border: Border(
-                                                        left: BorderSide(
-                                                            width: 50))),
-                                                child: Column(
-                                                  children: [
-                                                    Text(
-                                                      'Education',
-                                                      style: TextStyle(
-                                                          fontFamily: 'Outfit',
-                                                          fontSize: 50,
-                                                          fontWeight:
-                                                              FontWeight.w300),
-                                                    ),
-                                                  ],
-                                                ),
+                                                    fontSize: 30,
+                                                    color: Colors.white
+                                                        .withOpacity(0.6)),
                                               ),
                                               SizedBox(
                                                 height: 20,
                                               ),
-                                              //1st proj
-                                              Container(
-                                                decoration: BoxDecoration(
-                                                    border: Border(
-                                                        left: BorderSide(
-                                                            width: 50))),
-                                                child: Text(
-                                                  '\u2022 Faculty of Computer Science Iasi',
-                                                  style: TextStyle(
-                                                      fontFamily: 'Outfit',
-                                                      fontSize: 25),
-                                                ),
+                                              _skills,
+                                              Text(
+                                                '  language proeficiency:',
+                                                style: TextStyle(
+                                                    fontFamily: 'Outfit',
+                                                    fontSize: 30,
+                                                    color: Colors.white
+                                                        .withOpacity(0.6)),
                                               ),
                                               SizedBox(
-                                                height: 10,
+                                                height: 20,
                                               ),
-                                              Container(
-                                                decoration: BoxDecoration(
-                                                    border: Border(
-                                                        left: BorderSide(
-                                                            width: 100))),
-                                                child: Text(
-                                                    '(October 2022-Present)'),
+                                              _languages,
+                                              SizedBox(
+                                                height: 20,
+                                              ),
+                                              Text(
+                                                '  soft skills:',
+                                                style: TextStyle(
+                                                    fontFamily: 'Outfit',
+                                                    fontSize: 30,
+                                                    color: Colors.white
+                                                        .withOpacity(0.6)),
                                               ),
                                               SizedBox(
                                                 height: 15,
                                               ),
-
-                                              Container(
-                                                decoration: BoxDecoration(
-                                                    border: Border(
-                                                        left: BorderSide(
-                                                            width: 70))),
-                                                child: Text(
-                                                  'relavant coursework:',
-                                                  style: TextStyle(
-                                                      fontFamily: 'Outfit',
-                                                      fontSize: 25,
-                                                      color: Colors.white
-                                                          .withOpacity(0.7)),
-                                                ),
-                                              ),
-                                              Container(
-                                                decoration: BoxDecoration(
-                                                    border: Border(
-                                                        left: BorderSide(
-                                                            width: 75))),
-                                                child: Text(
-                                                  "data strucutres",
-                                                  style: TextStyle(
-                                                      fontFamily: 'Outfit',
-                                                      fontSize: 25),
-                                                ),
-                                              )
-                                            ]),
-                                      )
-                                    ],
-                                  ),
+                                              _softSkills,
+                                            ],
+                                          ),
+                                        ),
+                                      ),
+                                    )
+                                  ],
                                 ),
-                                Expanded(
-                                  flex: 3,
-                                  child: Container(
-                                    alignment: Alignment.topCenter,
-                                    decoration: BoxDecoration(
-                                        border: Border(
-                                            left: BorderSide(
-                                                color: Colors.white
-                                                    .withOpacity(0.5)))),
-                                    //height: 800,
-                                    child: Expanded(
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            ' Skills',
-                                            style: TextStyle(
-                                                fontFamily: 'Outfit',
-                                                fontSize: 50,
-                                                fontWeight: FontWeight.w300),
-                                          ),
-                                          SizedBox(
-                                            height: 20,
-                                          ),
-                                          Text(
-                                            '  technical skills:',
-                                            style: TextStyle(
-                                                fontFamily: 'Outfit',
-                                                fontSize: 30,
-                                                color: Colors.white
-                                                    .withOpacity(0.6)),
-                                          ),
-                                          SizedBox(
-                                            height: 20,
-                                          ),
-                                          _skills,
-                                          Text(
-                                            '  language proeficiency:',
-                                            style: TextStyle(
-                                                fontFamily: 'Outfit',
-                                                fontSize: 30,
-                                                color: Colors.white
-                                                    .withOpacity(0.6)),
-                                          ),
-                                          SizedBox(
-                                            height: 20,
-                                          ),
-                                          _languages,
-                                          SizedBox(
-                                            height: 20,
-                                          ),
-                                          Text(
-                                            '  soft skills:',
-                                            style: TextStyle(
-                                                fontFamily: 'Outfit',
-                                                fontSize: 30,
-                                                color: Colors.white
-                                                    .withOpacity(0.6)),
-                                          ),
-                                          SizedBox(
-                                            height: 15,
-                                          ),
-                                          _softSkills,
-                                        ],
+
+                                Row(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Expanded(
+                                      child: Container(
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Text('contact me',
+                                                style: TextStyle(
+                                                    fontFamily: 'Outfit',
+                                                    fontSize: 20,
+                                                    color: Colors.white)),
+                                            SizedBox(
+                                              width: 20,
+                                            ),
+                                            InkWell(
+                                              child: Image.asset(
+                                                "./assets/Linkedin.png",
+                                                width: 40,
+                                                height: 40,
+                                              ),
+                                              onTap: () {
+                                                _launchURLBrowser_linkedin();
+                                              },
+                                            ),
+                                            SizedBox(
+                                              width: 10,
+                                            ),
+                                            InkWell(
+                                              child: Image.asset(
+                                                "./assets/Instagram_icon.png",
+                                                width: 35,
+                                                height: 35,
+                                              ),
+                                              onTap: () {
+                                                _launchURLBrowser_inst();
+                                              },
+                                            ),
+                                          ],
+                                        ),
                                       ),
                                     ),
-                                  ),
+                                    Expanded(
+                                      child: Container(
+                                        child: Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.center,
+                                          children: [
+                                            Text('0755952408'),
+                                            SelectableText(
+                                                'serbanm.chiriac@gmail.com')
+                                          ],
+                                        ),
+                                      ),
+                                    ),
+                                    SizedBox(
+                                      height: 200,
+                                    )
+                                  ],
                                 )
                               ],
-                            ),
-
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: [
-                                Expanded(
-                                  child: Container(
-                                    child: Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        Text('contact me',
-                                            style: TextStyle(
-                                                fontFamily: 'Outfit',
-                                                fontSize: 20,
-                                                color: Colors.white)),
-                                        SizedBox(
-                                          width: 20,
-                                        ),
-                                        InkWell(
-                                          child: Image.asset(
-                                            "./assets/Linkedin.png",
-                                            width: 40,
-                                            height: 40,
-                                          ),
-                                          onTap: () {
-                                            _launchURLBrowser_linkedin();
-                                          },
-                                        ),
-                                        SizedBox(
-                                          width: 10,
-                                        ),
-                                        InkWell(
-                                          child: Image.asset(
-                                            "./assets/Instagram_icon.png",
-                                            width: 35,
-                                            height: 35,
-                                          ),
-                                          onTap: () {
-                                            _launchURLBrowser_inst();
-                                          },
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                Expanded(
-                                  child: Container(
-                                    child: Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        Text('0755952408'),
-                                        SelectableText(
-                                            'serbanm.chiriac@gmail.com')
-                                      ],
-                                    ),
-                                  ),
-                                ),
-                                SizedBox(
-                                  height: 200,
-                                )
-                              ],
-                            )
-                          ],
-                        ),
+                            )),
                       ),
                     ),
                   ],
